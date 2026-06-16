@@ -307,6 +307,18 @@ def main():
                     "p_value": float(p_val) if not np.isnan(p_val) else 0.0
                 }
                 
+        # Kendall's Tau correlation table for rankings
+        from scipy.stats import kendalltau
+        kendall_results = {}
+        for k1, v1 in ranks_dict.items():
+            kendall_results[k1] = {}
+            for k2, v2 in ranks_dict.items():
+                corr, p_val = kendalltau(v1, v2)
+                kendall_results[k1][k2] = {
+                    "coefficient": float(corr) if not np.isnan(corr) else 0.0,
+                    "p_value": float(p_val) if not np.isnan(p_val) else 0.0
+                }
+                
         # 5. Stability Test (Drop-One Alternative)
         stability_indices = {
             "MEREC-MABAC": [],
@@ -424,6 +436,7 @@ def main():
             "weight_statistics": weight_stats,
             "ranks": ranks_dict,
             "spearman_correlation": spearman_results,
+            "kendall_correlation": kendall_results,
             "stability_scores": stability_summary,
             "stability_raw": stability_indices,
             "sensitivity_results": sensitivity_results,

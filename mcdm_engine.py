@@ -142,6 +142,15 @@ def main():
             for k2 in keys:
                 corr, _ = spearmanr(combos[k1], combos[k2])
                 ranking_spearman[k1][k2] = float(corr) if not np.isnan(corr) else 0.0
+                
+        # Kendall's Tau correlation table for rankings
+        from scipy.stats import kendalltau
+        kendall_matrix = {}
+        for k1 in keys:
+            kendall_matrix[k1] = {}
+            for k2 in keys:
+                corr, _ = kendalltau(combos[k1], combos[k2])
+                kendall_matrix[k1][k2] = float(corr) if not np.isnan(corr) else 0.0
         
         # Best Combination Selection
         avg_corrs = {k: np.mean(list(v.values())) for k, v in ranking_spearman.items()}
@@ -167,6 +176,7 @@ def main():
             },
             "ranks": combos,
             "spearman_correlation": spearman_matrix,
+            "kendall_correlation": kendall_matrix,
             "stability_score": stability_score,
             "best_combination": best_combo,
             "alternatives": alts

@@ -348,6 +348,26 @@ function callInitialAIConsultant($jsonData, $apiKey) {
                 </div>
             </div>
 
+            <!-- Kendall Consistency Matrix -->
+            <div class="glass-card mb-4 kendall-card">
+                <h5 class="fw-bold mb-3" data-translate="kendallHeader">Konsistensi Metode: Matriks Kendall's Tau</h5>
+                <p class="text-muted small mb-3" data-translate="kendallDesc">Menguji tingkat korelasi peringkat dan konsistensi hasil perangkingan alternatif antar berbagai kombinasi metode pembobotan dan perangkingan.</p>
+                <div class="table-responsive">
+                    <table class="table table-glass text-center align-middle">
+                        <thead id="kendall-table-header">
+                            <!-- Populated dynamically -->
+                        </thead>
+                        <tbody id="kendall-table-body">
+                            <!-- Populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-2 text-muted small">
+                    <span class="badge bg-success me-2">&nbsp;</span> Hubungan korelasi sangat signifikan (p &lt; 0.01)
+                    <span class="badge bg-warning ms-3 me-2">&nbsp;</span> Hubungan korelasi signifikan (p &lt; 0.05)
+                </div>
+            </div>
+
             <!-- Stability & Sensitivity row -->
             <div class="row mb-4 stability-sensitivity-row">
                 <div class="col-md-6 mb-3 mb-md-0">
@@ -488,6 +508,8 @@ function callInitialAIConsultant($jsonData, $apiKey) {
                         statsEntropy: "Weight Entropy",
                         spearmanHeader: "Criteria Correlation: Spearman Matrix",
                         spearmanDesc: "Spearman Rank Correlation matrix between active criteria values across alternatives.",
+                        kendallHeader: "Method Consistency: Kendall's Tau Matrix",
+                        kendallDesc: "Tests the rank correlation and consistency of alternative rankings across different weighting and ranking combinations.",
                         stabilityHeader: "Uji Stabilitas: Exclude-Alternative Stability Index",
                         stabilityDesc: "Stability testing methodology: Done by eliminating one alternative at a time (from 16 countries), then recalculating weights and rankings. The stability score is the average Spearman correlation coefficient between original and perturbed rankings.",
                         stabilityColMethod: "Method Combination",
@@ -542,6 +564,8 @@ function callInitialAIConsultant($jsonData, $apiKey) {
                         statsEntropy: "Entropi Bobot",
                         spearmanHeader: "Korelasi Kriteria: Matriks Spearman",
                         spearmanDesc: "Matriks Korelasi Peringkat Spearman antar nilai kriteria aktif di seluruh alternatif.",
+                        kendallHeader: "Konsistensi Metode: Matriks Kendall's Tau",
+                        kendallDesc: "Menguji tingkat korelasi peringkat dan konsistensi hasil perangkingan alternatif antar berbagai kombinasi metode pembobotan dan perangkingan.",
                         stabilityHeader: "Uji Stabilitas: Exclude-Alternative Stability Index",
                         stabilityDesc: "Metodologi Uji Stabilitas: Dilakukan dengan mengeliminasi satu-persatu alternatif (dari 16 negara), lalu menghitung ulang bobot dan peringkat. Nilai stabilitas adalah rata-rata koefisien korelasi Spearman antara peringkat asli dan peringkat setelah satu negara dihilangkan.",
                         stabilityColMethod: "Kombinasi Metode",
@@ -929,6 +953,47 @@ function callInitialAIConsultant($jsonData, $apiKey) {
                         `;
                         stabilityBody.appendChild(tr);
                     });
+
+                    // Populate Kendall Table
+                    const kendallHeader = document.getElementById('kendall-table-header');
+                    const kendallBody = document.getElementById('kendall-table-body');
+                    kendallHeader.innerHTML = '';
+                    kendallBody.innerHTML = '';
+                    
+                    const kendallData = data.kendall_correlation;
+                    if (kendallData) {
+                        const methods = Object.keys(kendallData);
+                        
+                        // Header row
+                        const trh = document.createElement('tr');
+                        trh.innerHTML = `<th class="text-start">${currentLang === 'id' ? 'Metode' : 'Method'}</th>` + methods.map(m => `<th>${m}</th>`).join('');
+                        kendallHeader.appendChild(trh);
+                        
+                        // Body rows
+                        methods.forEach(m1 => {
+                            const tr = document.createElement('tr');
+                            let cellsHtml = `<td class="text-start fw-bold">${m1}</td>`;
+                            
+                            methods.forEach(m2 => {
+                                const coef = kendallData[m1][m2].coefficient;
+                                const p = kendallData[m1][m2].p_value;
+                                
+                                let bgColor = "transparent";
+                                if (coef === 1.0) bgColor = "rgba(255, 255, 255, 0.05)";
+                                else if (p < 0.01) bgColor = "rgba(25, 135, 84, 0.18)";
+                                else if (p < 0.05) bgColor = "rgba(255, 193, 7, 0.18)";
+                                
+                                cellsHtml += `
+                                    <td style="background-color: ${bgColor};">
+                                        <div class="fw-bold">${coef.toFixed(4)}</div>
+                                        <div class="text-muted small" style="font-size: 0.65rem;">p=${p < 0.001 ? '<0.001' : p.toFixed(4)}</div>
+                                    </td>
+                                `;
+                            });
+                            tr.innerHTML = cellsHtml;
+                            kendallBody.appendChild(tr);
+                        });
+                    }
 
                     // Populate Select Dropdowns
                     populateDropdowns(data);
@@ -1489,13 +1554,119 @@ function callInitialAIConsultant($jsonData, $apiKey) {
                         `;
                     }
                     
+                    // Kendall's Tau walkthrough calculation
+                    const combo1 = weightMethod.toUpperCase() + '-' + rankMethod.toUpperCase();
+                    const combo2 = (weightMethod === 'merec' ? 'LOPCOW' : 'MEREC') + '-' + rankMethod.toUpperCase();
+                    
+                    const altsSubset = currentData.alternatives.slice(0, 4);
+                    const r1 = altsSubset.map((_, i) => currentData.ranks[combo1][i]);
+                    const r2 = altsSubset.map((_, i) => currentData.ranks[combo2][i]);
+                    
+                    let C = 0;
+                    let D = 0;
+                    let pairsExplainHtml = '';
+                    
+                    const pairs = [
+                        [0, 1], [0, 2], [0, 3],
+                        [1, 2], [1, 3],
+                        [2, 3]
+                    ];
+                    
+                    pairs.forEach(([i, j]) => {
+                        const nameI = altsSubset[i];
+                        const nameJ = altsSubset[j];
+                        
+                        const diff1 = r1[i] - r1[j];
+                        const diff2 = r2[i] - r2[j];
+                        
+                        let isConcordant = false;
+                        let statusText = '';
+                        
+                        if ((diff1 > 0 && diff2 > 0) || (diff1 < 0 && diff2 < 0)) {
+                            isConcordant = true;
+                            C++;
+                            statusText = `<span class="text-success">Concordant</span>`;
+                        } else if ((diff1 > 0 && diff2 < 0) || (diff1 < 0 && diff2 > 0)) {
+                            isConcordant = false;
+                            D++;
+                            statusText = `<span class="text-danger">Discordant</span>`;
+                        } else {
+                            statusText = `<span class="text-muted">Tie</span>`;
+                        }
+                        
+                        pairsExplainHtml += `
+                            <tr>
+                                <td class="small text-start">(${nameI} vs ${nameJ})</td>
+                                <td>${combo1}: ${r1[i]} vs ${r1[j]}</td>
+                                <td>${combo2}: ${r2[i]} vs ${r2[j]}</td>
+                                <td class="fw-bold">${statusText}</td>
+                            </tr>
+                        `;
+                    });
+                    
+                    const tau = (C - D) / 6;
+                    
+                    const kendallTitleText = currentLang === 'id' 
+                        ? `🔬 Contoh Perhitungan Kendall's Tau ($\\\\tau$) Peringkat Teratas`
+                        : `🔬 Example Calculation of Kendall's Tau ($\\\\tau$) for Top Alternatives`;
+                        
+                    const kendallDescText = currentLang === 'id'
+                        ? `Berikut adalah simulasi langkah demi langkah perhitungan korelasi Kendall's Tau antara <b>${combo1}</b> dan <b>${combo2}</b> menggunakan 4 alternatif pertama untuk kemudahan penjelasan. Rumus Kendall's Tau adalah:`
+                        : `Below is a step-by-step simulation of Kendall's Tau correlation between <b>${combo1}</b> and <b>${combo2}</b> using the first 4 alternatives for explanation simplicity. The Kendall's Tau formula is:`;
+                        
+                    const kendallFormula = `\\\\tau = \\\\frac{C - D}{\\\\frac{1}{2} n(n-1)}`;
+                    
+                    const kendallExplainFormula = currentLang === 'id'
+                        ? `Dimana $C$ adalah jumlah pasangan selaras (Concordant), $D$ adalah jumlah pasangan tidak selaras (Discordant), dan $n=4$ adalah jumlah alternatif dalam sampel ($1/2 \\\\times 4 \\\\times 3 = 6$ pasangan total).`
+                        : `Where $C$ is the number of concordant pairs, $D$ is the number of discordant pairs, and $n=4$ is the number of alternatives in the sample ($1/2 \\\\times 4 \\\\times 3 = 6$ total pairs).`;
+
+                    const kendallResultTitle = currentLang === 'id' ? 'Hasil Akhir Kendall\'s Tau:' : 'Final Kendall\'s Tau Result:';
+
+                    const kendallWalkthroughHtml = `
+                        <h6 class="text-gradient fw-bold mb-3">${kendallTitleText}</h6>
+                        <p class="small text-muted mb-2">${kendallDescText}</p>
+                        
+                        <div class="math-box mb-3 text-center" style="background: rgba(0, 0, 0, 0.15); border-radius: 6px; padding: 15px;">
+                            $$${kendallFormula}$$
+                            <span class="small text-muted d-block mt-2">${kendallExplainFormula}</span>
+                        </div>
+                        
+                        <div class="table-responsive mb-3">
+                            <table class="table table-sm table-glass text-center align-middle" style="font-size: 0.75rem;">
+                                <thead>
+                                    <tr>
+                                        <th class="text-start">${currentLang === 'id' ? 'Pasangan Alternatif' : 'Alternative Pair'}</th>
+                                        <th>Rank ${combo1}</th>
+                                        <th>Rank ${combo2}</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${pairsExplainHtml}
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="math-box" style="background: rgba(0, 0, 0, 0.15); border-radius: 6px; padding: 15px;">
+                            $C = ${C}$, $D = ${D}$<br>
+                            $$\\\\tau = \\\\frac{${C} - ${D}}{6} = \\\\frac{${C - D}}{6} = ${tau.toFixed(4)}$$<br>
+                            <strong>${kendallResultTitle}</strong> $\\\\tau = $ <b>${tau.toFixed(4)}</b>
+                        </div>
+                    `;
+                    
                     let html = `
                         <div class="row">
                             <div class="col-lg-6 border-end border-secondary pb-3 pb-lg-0">
                                 ${leftColHtml}
                             </div>
-                            <div class="col-lg-6 ps-lg-4">
+                            <div class="col-lg-6 ps-lg-4 pb-3">
                                 ${rightColHtml}
+                            </div>
+                        </div>
+                        <hr class="border-secondary my-4">
+                        <div class="row">
+                            <div class="col-12">
+                                ${kendallWalkthroughHtml}
                             </div>
                         </div>
                     `;
