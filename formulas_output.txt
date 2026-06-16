@@ -1,0 +1,153 @@
+
+=== Step 2: Normalization of the decision matrix. ===
+Step 2: Normalization of the decision matrix.
+The normalized decision matrix Y is formed to eliminate discrepancies in measurement scales, as Eq. (2). The criteria 
+are divided into benefit-type ( B) and cost-type or non-benefit-type ( H) indicators. Normalization is performed as Eq. (3). 
+This transformation ensures that higher values in the normalized matrix always represent more favorable outcomes.
+ Y=
+y11y12 ···
+y21y22 ···
+.........y1j ···y1m
+y2j ···y2m
+.........
+yi1yi2 ···
+.........
+yn1yn2 ···yij ···yim
+.........
+ynj ···ynm
+
+ (2)
+ yij={mini(xij)
+xij∀j∈B ;i=1,...,n
+xij
+maxi(xij)∀j∈H;i=1,...,n (3)
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 7 / 20Step 3: Calculation of the initial performance score.
+The overall performance score Si of each alternative i is computed using a logarithmic aggregation function as Eq. (4) 
+and demonstrated in Fig 1 . This function balances the impact of high and low values, providing a neutral and comprehen -
+sive pe
+
+--- Occurrence 3 ---
+·xij ···xim
+.........
+xnj ···xnm
+
+ (1)
+Step 2: Normalization of the decision matrix.
+The normalized decision matrix Y is formed to eliminate discrepancies in measurement scales, as Eq. (2). The criteria 
+are divided into benefit-type ( B) and cost-type or non-benefit-type ( H) indicators. Normalization is performed as Eq. (3). 
+This transformation ensures that higher values in the normalized matrix always represent more favorable outcomes.
+ Y=
+y
+
+=== Step 3: Calculation of the initial performance score. ===
+Step 3: Calculation of the initial performance score.
+The overall performance score Si of each alternative i is computed using a logarithmic aggregation function as Eq. (4) 
+and demonstrated in Fig 1 . This function balances the impact of high and low values, providing a neutral and comprehen -
+sive pe
+
+--- Occurrence 3 ---
+·xij ···xim
+.........
+xnj ···xnm
+
+ (1)
+Step 2: Normalization of the decision matrix.
+The normalized decision matrix Y is formed to eliminate discrepancies in measurement scales, as Eq. (2). The criteria 
+are divided into benefit-type ( B) and cost-type or non-benefit-type ( H) indicators. Normalization is performed as Eq. (3). 
+This transformation ensures that higher values in the normalized matrix always represent more favorable outcomes.
+ Y=
+y11y12 ···
+y21y22 ···
+.........y1j ···y1m
+y2j ···y2m
+.........
+yi1yi2 ···
+.........
+yn1yn2 ···yij ···yim
+.........
+ynj ···ynm
+
+ (2)
+ yij={mini(xij)
+xij∀j∈B ;i=1,...,n
+xij
+maxi(xij)∀j∈H;i=1,...,n (3)
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 7 / 20Step 3: Calculation of the initial performance score.
+The overall performance score Si of each alternative i is computed using a logarithmic aggregation function as Eq. (4) 
+and demonstrated in Fig 1 . This function balances the impact of high and low values, providing a neutral and comprehen -
+sive performance evaluation.
+ Si=ln
+1+
+1
+mm/summationdisplay
+j=1/vextendsingle/vextendsingleln(yij)/vextendsingle/vexten
+
+=== Step 4: Performance evaluation with eliminated criteria. ===
+Step 4: Performance evaluation with eliminated criteria.
+To determine the importance of each crite
+
+--- Occurrence 4 ---
+of absolute deviations between the original and 
+adjusted performance scores according to Eq. (6). This value quantifies the overall influence of each criterion across all 
+alternatives.
+ Ej=n/summationdisplay
+i=1/vextendsingle/vextendsingleS′
+ij–Si/vextendsingle/vextendsinglej=1,...,m
+ (6)
+Step 6: Normalization of criterion weights.
+Fig 1 . The weights of the comparative analysis.
+https://doi.org/10.1371/journal.pone.0324538.g001
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 8 / 20The objective weight wj of each criterion is calculated by normalizing the removal effects according to Eq. (7). Larger 
+weights reflect greater influence on overall performance, ensuring that more impactful criteria are emphasized.
+ wj=Ej∑m
+j=1Ejj=1,...,m
+ (7)
+Step 7: Evaluation of non-beneficial (input) indicators.
+The non-beneficial criteria are aggregated ( Ii) for each alternative i using Eq. (8).
+ Ii=g∑
+j=1wj(maxi(xij)–xij
+mini(xij))
+i=1,...,n
+ (8)
+where g represents the number of non-beneficial criteria. This captures how well each alternative minimizes undesir -
+able impacts.
+Step 8: Linear transformation of non-beneficial scores
+A normalized non-beneficial score (Ii) is computed through linear scaling according to Eq. (9). This ensures that the 
+lowest-performing alter
+
+--- Occurrence 5 ---
+le each row represents one of the 16 countries under con
+Not found: Step 5: Overall performance
+
+=== Step 6: Normalization of criterion weights. ===
+Step 6: Normalization of criterion weights.
+Fig 1 . The weights of the comparative analysis.
+https://doi.org/10.1371/journal.pone.0324538.g001
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 8 / 20The objective weight wj of each criterion is calculated by normalizing the removal effects according to Eq. (7). Larger 
+weights reflect greater influence on overall performance, ensuring that more impactful criteria are emphasized.
+ wj=Ej∑m
+j=1Ejj=1,...,m
+ (7)
+Step 7: Evaluation of non-beneficial (input) indicators.
+The non-beneficial criteria are aggregated ( Ii) for each alternative i using Eq. (8).
+ Ii=g∑
+j=1wj(maxi(xij)–xij
+mini(xij))
+i=1,...,n
+ (8)
+where g represents the number of non-beneficial criteria. This captures how well each alternative minimizes undesir -
+able impacts.
+Step 8: Linear transformation of non-beneficial scores
+A normalized non-beneficial score (Ii) is computed through linear scaling according to Eq. (9). This ensures that the 
+lowest-performing alter
+
+--- Occurrence 5 ---
+le each row represents one of the 16 countries under consideration. The MEREC-OCRA 
+method, described in detail in the Methodology section, was then applied to evaluate the sustainability performance of the 
+countries. This was done by first constructing a decision matrix ( Table 3 ), followed by a normalization process ( Table 4 ) 
+using Equation (3) to convert all values into a common scale that accommodates both beneficial and non-beneficial criteria. 
+This tran

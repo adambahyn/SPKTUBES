@@ -1,0 +1,324 @@
+ne | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 1 / 20
+ 
+ OPEN ACCESS
+Citation: Wang C-N, Nguyen H-K, Nhieu 
+N-L (2025) Assessing sustainability on the 
+modern Silk Road: An objective weighting 
+methodological approach. PLoS One 20(5): 
+e0324538. https://doi.org/10.1371/journal.
+pone.0324538
+Editor: Karrar Hameed Abdulkareem, Al 
+Muthanna University, IRAQ
+Received:  February 2, 2025
+Accepted:  April 27, 2025
+Published: May 20, 2025
+Copyright:  © 2025 Wang et al . This is an open 
+access article distributed under the terms of 
+the Creative Commons Attribution License , 
+which permits unrestricted use, distribution, 
+and reproduction in any medium, provided the 
+original author and source are credited.
+Data availability statement : All relevant data 
+are within the manuscript and its Supporting 
+Information  files.
+Funding: This study is partial funded by 
+University of Economics Ho Chi Minh City. 
+The funders had no role in study design, data RESEARCH ARTICLE
+Assessing s
+
+=== SEGMENT ===
+
+e sustainability indicators in agricultural photovoltaic-based renewable 
+energy systems [ 22]. Similarly, Alkan applies the criteria importance through intercriteria correlation (CIRITIC), stepwise 
+weight assessment ratio analysis (SWARA), and combined distance-based assessment (CODAS) methods to evaluate 
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 4 / 20renewable energy systems towards sustainable development [ 23]. This research shows that the MCDM method can be 
+changed to take into account how sustainable development is available and useful in different areas.
+Further contributions to the application of MCDM in sustainable development have been made through literature 
+reviews and innovative model integration. Brodny & Tutak conducted a systematic review of the use of MCDM to assess 
+energy and climate sustainability in European Union member states, providing a broad overview of how these tools are 
+applied across different projects and geographies [ 2
+
+=== SEGMENT ===
+
+erall influence of each criterion across all 
+alternatives.
+ Ej=n/summationdisplay
+i=1/vextendsingle/vextendsingleS′
+ij–Si/vextendsingle/vextendsinglej=1,...,m
+ (6)
+Step 6: Normalization of criterion weights.
+Fig 1 . The weights of the comparative analysis.
+https://doi.org/10.1371/journal.pone.0324538.g001
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 8 / 20The objective weight wj of each criterion is calculated by normalizing the removal effects according to Eq. (7). Larger 
+weights reflect greater influence on overall performance, ensuring that more impactful criteria are emphasized.
+ wj=Ej∑m
+j=1Ejj=1,...,m
+ (7)
+Step 7: Evaluation of non-beneficial (input) indicators.
+The non-beneficial criteria are aggregated ( Ii) for each alternative i using Eq. (8).
+ Ii=g∑
+j=1wj(maxi(xij)–xij
+mini(xij))
+i=1,...,n
+ (8)
+where g represents the number of non-beneficial criteria. This captures how well each alternative minimizes undesir -
+able impacts.
+Step 8: Linear transform
+
+=== SEGMENT ===
+
+ch criterion across all 
+alternatives.
+ Ej=n/summationdisplay
+i=1/vextendsingle/vextendsingleS′
+ij–Si/vextendsingle/vextendsinglej=1,...,m
+ (6)
+Step 6: Normalization of criterion weights.
+Fig 1 . The weights of the comparative analysis.
+https://doi.org/10.1371/journal.pone.0324538.g001
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 8 / 20The objective weight wj of each criterion is calculated by normalizing the removal effects according to Eq. (7). Larger 
+weights reflect greater influence on overall performance, ensuring that more impactful criteria are emphasized.
+ wj=Ej∑m
+j=1Ejj=1,...,m
+ (7)
+Step 7: Evaluation of non-beneficial (input) indicators.
+The non-beneficial criteria are aggregated ( Ii) for each alternative i using Eq. (8).
+ Ii=g∑
+j=1wj(maxi(xij)–xij
+mini(xij))
+i=1,...,n
+ (8)
+where g represents the number of non-beneficial criteria. This captures how well each alternative minimizes undesir -
+able impacts.
+Step 8: Linear transformation of non-benefici
+
+=== SEGMENT ===
+
+ weights.
+Fig 1 . The weights of the comparative analysis.
+https://doi.org/10.1371/journal.pone.0324538.g001
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 8 / 20The objective weight wj of each criterion is calculated by normalizing the removal effects according to Eq. (7). Larger 
+weights reflect greater influence on overall performance, ensuring that more impactful criteria are emphasized.
+ wj=Ej∑m
+j=1Ejj=1,...,m
+ (7)
+Step 7: Evaluation of non-beneficial (input) indicators.
+The non-beneficial criteria are aggregated ( Ii) for each alternative i using Eq. (8).
+ Ii=g∑
+j=1wj(maxi(xij)–xij
+mini(xij))
+i=1,...,n
+ (8)
+where g represents the number of non-beneficial criteria. This captures how well each alternative minimizes undesir -
+able impacts.
+Step 8: Linear transformation of non-beneficial scores
+A normalized non-beneficial score (Ii) is computed through linear scaling according to Eq. (9). This ensures that the 
+lowest-performing alternative receives a base sco
+
+=== SEGMENT ===
+
+1
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 8 / 20The objective weight wj of each criterion is calculated by normalizing the removal effects according to Eq. (7). Larger 
+weights reflect greater influence on overall performance, ensuring that more impactful criteria are emphasized.
+ wj=Ej∑m
+j=1Ejj=1,...,m
+ (7)
+Step 7: Evaluation of non-beneficial (input) indicators.
+The non-beneficial criteria are aggregated ( Ii) for each alternative i using Eq. (8).
+ Ii=g∑
+j=1wj(maxi(xij)–xij
+mini(xij))
+i=1,...,n
+ (8)
+where g represents the number of non-beneficial criteria. This captures how well each alternative minimizes undesir -
+able impacts.
+Step 8: Linear transformation of non-beneficial scores
+A normalized non-beneficial score (Ii) is computed through linear scaling according to Eq. (9). This ensures that the 
+lowest-performing alternative receives a base score of zero.
+ Ii=Ii–min
+i(
+Ii)
+ (9)
+Step 9: Evaluation of beneficial (output) indicators.
+For each alternati
+
+=== SEGMENT ===
+
+urnal.pone.0324538  May 20, 2025 11 / 20In the light of Fig 4 , it is observed that the most influential criterion is A14 – Nitrous oxide emissions in the energy sec -
+tor, which received the highest weight of 0.1343. This indicates that variations in nitrous oxide emissions play a significant 
+role in shaping the overall sustainability rankings. The prominence of this environmental indicator underscores the growing Table 4 . The normalized decision matrix.
+Country Criteria
+A1 A2 A3 A4 A5 A6 A7 A8 A9 A10 A11 A12 A13 A14
+Iraq 0.089 0.225 0.962 0.029 0.126 0.179 0.856 0.075 0.074 0.996 0.274 0.111 0.562 0.034
+Turkey 0.039 0.126 0.718 0.422 0.641 0.178 0.491 0.024 0.198 0.625 0.153 0.057 0.080 0.098
+Lebanon 0.182 0.323 0.594 1.000 1.000 0.260 0.396 0.451 0.073 0.788 1.000 1.000 0.001 0.008
+Israel 0.202 0.024 0.778 0.026 0.029 0.212 0.730 0.193 0.073 0.553 0.204 0.346 0.006 0.021
+Saudi Arabia 0.106 0.044 0.903 0.014 0.115 0.169 0.900 0.053 0.181 0.705 0.196 0.041 0.569 0.135
+Oman 0.138 0.0
+
+=== SEGMENT ===
+
+in regions facing intensive industrial activ -
+ity and weak environmental regulations. Similarly, A4 – Inflation (consumer prices) and A13 – Methane emissions in the 
+energy sector also received high weights of 0.1139 and 0.1014, respectively. These criteria reflect both macroeconomic 
+stability and climate-related pressures, suggesting that sustainable development in the studied regions is highly sensitive Table 5 . The eliminated overall performance.
+Country Criteria
+A1 A2 A3 A4 A5 A6 A7 A8 A9 A10 A11 A12 A13 A14
+Iraq 0.935 0.960 0.999 0.903 0.944 0.954 0.996 0.930 0.930 1.000 0.966 0.941 0.985 0.907
+Turkey 0.932 0.964 1.010 0.996 1.007 0.973 1.000 0.918 0.976 1.006 0.969 0.942 0.951 0.957
+Lebanon 0.868 0.885 0.903 0.918 0.918 0.879 0.891 0.895 0.840 0.911 0.918 0.918 0.696 0.771
+Israel 1.133 1.083 1.163 1.084 1.087 1.134 1.162 1.132 1.109 1.156 1.133 1.145 1.050 1.079
+Saudi Arabia 0.996 0.972 1.051 0.942 0.998 1.008 1.051 0.977 1.010 1.045 1.012 0.970 1.039 1.002
+Oman 0.999 0.974 1.
+
+=== SEGMENT ===
+
+ent attractiveness, while methane emissions highlight the broader environmental footprint of the energy 
+sector. The criterion A8 – Labor force, total (million people) was also assigned a substantial weight of 0.1004, indicating 
+the strong role that human capital and labor capacity play in determining development potential. A large labor force, if 
+effectively mobilized, may support sustainable economic expansion, provided that employment is aligned with green and 
+inclusive growth strategies.
+In contrast, several criteria were found to exert relatively lower influence. Notably, A3 – Gross national expenditure (% 
+of GDP) and A10 – Human Capital Index (HCI) received weights of 0.0096 and 0.0116, respectively. The low weight of 
+gross national expenditure may suggest that this indicator varies less across the countries or has a limited direct correla -
+tion with broader sustainability outcomes in the SREB context. Similarly, the human capital index—despite its conceptual 
+relevance—may
+
+=== SEGMENT ===
+
+sive growth strategies.
+In contrast, several criteria were found to exert relatively lower influence. Notably, A3 – Gross national expenditure (% 
+of GDP) and A10 – Human Capital Index (HCI) received weights of 0.0096 and 0.0116, respectively. The low weight of 
+gross national expenditure may suggest that this indicator varies less across the countries or has a limited direct correla -
+tion with broader sustainability outcomes in the SREB context. Similarly, the human capital index—despite its conceptual 
+relevance—may display minimal variability or overlapping values in the studied dataset, thus reducing its discrimination 
+power in the decision model. Moderate weights were observed for other economic and environmental indicators, such 
+as A1 – Agriculture, forestry, and fishing (0.0975), A2 – GDP per capita (0.0792), A5 – GDP deflator (0.0830), and A12 – 
+Greenhouse gas emissions (0.0700). These indicators contribute meaningfully to the evaluation but are not as dominant 
+as A14 or A
+
+=== SEGMENT ===
+
+a were found to exert relatively lower influence. Notably, A3 – Gross national expenditure (% 
+of GDP) and A10 – Human Capital Index (HCI) received weights of 0.0096 and 0.0116, respectively. The low weight of 
+gross national expenditure may suggest that this indicator varies less across the countries or has a limited direct correla -
+tion with broader sustainability outcomes in the SREB context. Similarly, the human capital index—despite its conceptual 
+relevance—may display minimal variability or overlapping values in the studied dataset, thus reducing its discrimination 
+power in the decision model. Moderate weights were observed for other economic and environmental indicators, such 
+as A1 – Agriculture, forestry, and fishing (0.0975), A2 – GDP per capita (0.0792), A5 – GDP deflator (0.0830), and A12 – 
+Greenhouse gas emissions (0.0700). These indicators contribute meaningfully to the evaluation but are not as dominant 
+as A14 or A4. Their inclusion highlights the multidimensional n
+
+=== SEGMENT ===
+
+n capital index—despite its conceptual 
+relevance—may display minimal variability or overlapping values in the studied dataset, thus reducing its discrimination 
+power in the decision model. Moderate weights were observed for other economic and environmental indicators, such 
+as A1 – Agriculture, forestry, and fishing (0.0975), A2 – GDP per capita (0.0792), A5 – GDP deflator (0.0830), and A12 – 
+Greenhouse gas emissions (0.0700). These indicators contribute meaningfully to the evaluation but are not as dominant 
+as A14 or A4. Their inclusion highlights the multidimensional nature of sustainability, where both productive capacity and 
+ecological stability interact to shape national development trajectories.
+The aggregation of the performance scores for all non-beneficial criteria across the evaluated alternatives has been 
+conducted through the application of Eq. (8) as shown in Table 6 . This procedure enables the construction of a composite 
+matrix reflecting the cumulative negative i
+
+=== SEGMENT ===
+
+he SREB framework. These scores reflect the 
+integrated sustainability performance of each country, incorporating both beneficial and non-beneficial criteria related to 
+Fig 4 . The obtained criteria weight.
+https://doi.org/10.1371/journal.pone.0324538.g004
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 14 / 20environmental, social, and economic dimensions. Among all participating countries, Israel achieved the highest overall 
+score (135.22), indicating its leading position in terms of sustainability performance. This result suggests a strong bal -
+ance between economic productivity, environmental responsibility, and social development. Close behind Israel are Sri 
+Lanka (132.18), Bahrain (131.86), and Nepal (132.09), all of which demonstrate commendable performance across the 
+assessed criteria. These high-ranking countries may be characterized by effective emission management, robust human Table 6 . The weighted aggregated performance scores for non-beneficia
+
+=== SEGMENT ===
+
+132.09), all of which demonstrate commendable performance across the 
+assessed criteria. These high-ranking countries may be characterized by effective emission management, robust human Table 6 . The weighted aggregated performance scores for non-beneficial criteria.
+Country Non-benefit criteria Ii
+A4 A5 A13 A14
+Iraq 7.652 2.477 47.926 32.756 90.811
+Turkey 4.553 1.018 100.637 30.592 136.800
+Lebanon 0 0 109.244 33.629 142.872
+Israel 7.680 2.751 108.654 33.208 152.292
+Saudi Arabia 7.768 2.506 47.180 29.334 86.789
+Oman 7.752 2.368 93.863 33.508 137.491
+UAE 7.660 2.572 79.728 32.679 122.639
+Qatar 7.652 2.343 83.983 33.390 127.368
+Kuwait 7.699 2.331 91.727 33.346 135.102
+Bahrain 7.715 2.688 105.262 33.776 149.441
+Egypt 7.242 2.637 87.103 32.114 129.095
+India 7.574 2.676 0 0 10.250
+Pakistan 6.967 2.588 88.309 29.024 126.888
+Bangladesh 7.528 2.738 101.577 32.710 144.553
+Sri Lanka 5.593 1.911 108.686 33.240 149.430
+Nepal 7.528 2.695 106.576 32.946 149.745
+https://doi.org/10.1371/journal.pone.0
+
+=== SEGMENT ===
+
+888
+Bangladesh 7.528 2.738 101.577 32.710 144.553
+Sri Lanka 5.593 1.911 108.686 33.240 149.430
+Nepal 7.528 2.695 106.576 32.946 149.745
+https://doi.org/10.1371/journal.pone.0324538.t006
+Table 7 . The weighted aggregated performance scores for beneficial criteria.
+Country Beneficial Criteria Oi
+A1 A2 A3 A6 A7 A8 A9 A10 A11 A12
+Iraq 0.9932 0.2727 0.0004 0.2646 0.0032 1.2325 0.8105 0.0001 0.1522 0.5619 80.561
+Turkey 2.3737 0.5501 0.0038 0.2664 0.0195 4.0028 0.2640 0.0070 0.3176 1.1512 126.551
+Lebanon 0.4381 0.1660 0.0066 0.1648 0.0287 0.1221 0.8279 0.0031 0 0 132.623
+Israel 0.3849 3.1612 0.0027 0.2152 0.0070 0.4205 0.8210 0.0094 0.2237 0.1323 142.042
+Saudi Arabia 0.8228 1.7251 0.0010 0.2837 0.0021 1.7962 0.2935 0.0049 0.2344 1.6534 76.539
+Oman 0.6066 1.4062 0.0017 0.3916 0.0184 0.1670 0.3687 0.0058 0.1824 0.1599 127.241
+UAE 0.2521 3.1077 0.0003 0.7629 0.0448 0.6837 0.1323 0.0077 0.1864 0.5344 112.389
+Qatar 0 5.1405 0 0.4462 0.0119 0.1384 0.1535 0.0066 0.3350 0.2193 117.118
+Kuwait 0.0775 2
+
+=== SEGMENT ===
+
+/10.1371/journal.pone.0324538  May 20, 2025 18 / 20A novel methodological framework, known as the MEREC-OCRA method, was introduced and employed in this study. 
+This approach integrates the objective weighting capabilities of the MEREC method—which assesses the impact of 
+criteria removal on overall alternative performance—with the operational competitiveness evaluation offered by the OCRA 
+technique. By applying this hybrid multi-criteria decision-making framework, an objective and reproducible ranking of 
+sixteen countries involved in the SREB was achieved. The methodological innovation was designed to address both bene -
+ficial and non-beneficial sustainability indicators, thereby providing a comprehensive and balanced assessment of each 
+country’s performance.
+The application of the MEREC-OCRA methodology yielded a spectrum of sustainability performance scores, which 
+revealed significant disparities among the countries examined. Some nations were identified as leaders in sustain -
+
+=== SEGMENT ===
+
+ a review. Expert 
+Systems. 2020;37(4). https://doi.org/10.1111/exsy.12534
+ 18. Nhieu N-L, Dang TD. Harnessing Vietnam’s coastal potential: prioritizing marine energy technologies with an objectively weighting decision-making 
+approach. Renewable Energy. 2024;230:120881. https://doi.org/10.1016/j.renene.2024.120881
+ 19. Keshavarz-Ghorabaee M, Amiri M, Zavadskas EK, Turskis Z, Antucheviciene J. Determination of objective weights using a new method based on 
+the removal effects of criteria (MEREC). Symmetry. 2021;13(4):525. https://doi.org/10.3390/sym13040525
+ 20. Chakraborty S, Chatterjee P, Das P. Operational competitiveness rating analysis (ocra) method. Multi-criteria decision-making methods in manufac -
+turing environments. Apple Academic Press; 2024. p. 165–70.
+ 21. Nasrollahi S, Kazemi A, Jahangir M-H, Aryaee S. Selecting suitable wave energy technology for sustainable development, an MCDM approach. 
+Renew Energy. 2023;202:756–72. https://doi.org/10.1016/j.renene.2022.11.005
+ 22. 
+
+=== SEGMENT ===
+
+g 
+approach. Renewable Energy. 2024;230:120881. https://doi.org/10.1016/j.renene.2024.120881
+ 19. Keshavarz-Ghorabaee M, Amiri M, Zavadskas EK, Turskis Z, Antucheviciene J. Determination of objective weights using a new method based on 
+the removal effects of criteria (MEREC). Symmetry. 2021;13(4):525. https://doi.org/10.3390/sym13040525
+ 20. Chakraborty S, Chatterjee P, Das P. Operational competitiveness rating analysis (ocra) method. Multi-criteria decision-making methods in manufac -
+turing environments. Apple Academic Press; 2024. p. 165–70.
+ 21. Nasrollahi S, Kazemi A, Jahangir M-H, Aryaee S. Selecting suitable wave energy technology for sustainable development, an MCDM approach. 
+Renew Energy. 2023;202:756–72. https://doi.org/10.1016/j.renene.2022.11.005
+ 22. Vaziri Rad MA, Forootan Fard H, Khazanedari K, Toopshekan A, Ourang S, Khanali M, et al. A global framework for maximizing sustainable devel -
+opment indexes in agri-photovoltaic-based renewable systems: Integrating DEMATEL,

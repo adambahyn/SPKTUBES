@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+:root {
+    /* Primary Light Theme Variables */
+    --primary-color: #6366f1;
+    --secondary-color: #a855f7;
+    --bg-color: #f1f5f9;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --text-main: #0f172a;
+    --text-muted: #334155; /* Slate 700 - High Contrast */
+    --border-color: rgba(15, 23, 42, 0.15);
+    --table-th-bg: rgba(15, 23, 42, 0.06);
+    --chat-bg: rgba(255, 255, 255, 0.95);
+    --chat-user-bg: #6366f1;
+    --chat-ai-bg: #e2e8f0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-image: radial-gradient(circle at 15% 50%, rgba(79, 70, 229, 0.06), transparent 25%),
+                      radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.06), transparent 25%);
+}
+
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Premium Buttons */
+.btn-primary-custom {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    color: white !important;
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-primary-custom:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+}
+
+.btn-outline-custom {
+    background: transparent;
+    border: 1px solid rgba(15, 23, 42, 0.2);
+    color: #334155;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-custom:hover {
+    background-color: rgba(99, 102, 241, 0.08);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Premium Contrast Dropdowns and Inputs */
+.form-control, .form-select {
+    background-color: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.2) !important;
+    color: #0f172a !important;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control::placeholder {
+    color: #64748b;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.2) !important;
+}
+
+/* Table Glass Styles */
+.table-glass {
+    color: var(--text-main);
+}
+.table-glass th {
+    background-color: var(--table-th-bg);
+    border-bottom: 2px solid var(--border-color);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+.table-glass td {
+    border-bottom: 1px solid var(--border-color);
+    background-color: transparent;
+    color: var(--text-main);
+}
+
+.ai-consultant-card {
+    border-left: 5px solid var(--secondary-color);
+}
+
+.text-gradient {
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Loading Overlay */
+#loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(241, 245, 249, 0.9);
+    z-index: 9999;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+#loadingOverlay h5 {
+    color: #0f172a !important;
+}
+
+/* Walkthrough Math Blocks */
+.math-box {
+    background: rgba(15, 23, 42, 0.05);
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    border-radius: 0.5rem;
+    padding: 0.85rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    color: #0f172a;
+}
+
+/* Cursor pointer style for ranks comparison table rows */
+.cursor-pointer {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.table-glass tbody tr:hover {
+    background-color: rgba(15, 23, 42, 0.03);
+}
+
+/* Print Styles - High Quality Academic Report Output */
+@media print {
+    /* Print-Only Elements Show */
+    .print-only {
+        display: block !important;
+    }
+    
+    /* Hide all Interactive, Toggles, Navigation and Chat Elements */
+    .no-print, 
+    .btn-controls,
+    #loadingOverlay,
+    .chat-section,
+    .select-radar-container,
+    .select-walkthrough-container,
+    #criteriaSettingsCollapse,
+    .theme-toggle-btn,
+    .chat-history,
+    .input-group,
+    button,
+    .badge {
+        display: none !important;
+    }
+    
+    body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        background-image: none !important;
+        font-family: 'Times New Roman', Georgia, serif !important;
+        font-size: 12pt !important;
+        line-height: 1.5 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    .container {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Strict Academic Pagination (Page Breaks) */
+    .ai-section {
+        page-break-after: always;
+    }
+    
+    .rankings-card {
+        page-break-before: always;
+        page-break-after: always;
+    }
+    
+    .weights-stats-row {
+        page-break-before: always;
+    }
+    
+    .stability-sensitivity-row {
+        page-break-after: always;
+    }
+    
+    .math-card {
+        page-break-before: always;
+    }
+    
+    .glass-card {
+        background: #ffffff !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin-bottom: 2.5rem !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        color: #000000 !important;
+        page-break-inside: avoid;
+        border-radius: 0 !important;
+    }
+
+    /* Heading Styling */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Times New Roman', Georgia, serif !important;
+        color: #000000 !important;
+        font-weight: bold !important;
+        margin-top: 1.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .text-gradient {
+        background: none !important;
+        -webkit-text-fill-color: initial !important;
+        color: #000000 !important;
+        font-weight: bold !important;
+    }
+
+    /* Formal APA Style Tables (No vertical lines, clean double top/bottom lines) */
+    .table-glass {
+        color: #000000 !important;
+        width: 100% !important;
+        border-collapse: collapse !important;
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+        border-top: 2px solid #000000 !important;
+        border-bottom: 2px solid #000000 !important;
+    }
+    
+    .table-glass th {
+        color: #000000 !important;
+        border-bottom: 1px solid #000000 !important;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+        background-color: transparent !important;
+        font-weight: bold !important;
+        padding: 10px 8px !important;
+        font-size: 11pt !important;
+    }
+    
+    .table-glass td {
+        color: #000000 !important;
+        border-bottom: 0.5px solid #d1d5db !important;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+        padding: 8px 8px !important;
+        font-size: 10.5pt !important;
+        background: transparent !important;
+    }
+    
+    /* Format last row of tables with a solid border */
+    .table-glass tbody tr:last-child td {
+        border-bottom: 1.5px solid #000000 !important;
+    }
+    
+    /* Academic Blockquote for AI Summary */
+    .ai-consultant-card {
+        border-left: 3.5px solid #000000 !important;
+        background-color: #fcfcfc !important;
+        padding: 1.5rem !important;
+        font-style: italic !important;
+        margin: 1.5rem 0 !important;
+        page-break-inside: avoid;
+    }
+    
+    /* Walkthrough LaTeX Equations Block Styling */
+    .math-box {
+        background: #fafafa !important;
+        border-top: none !important;
+        border-right: none !important;
+        border-bottom: none !important;
+        border-left: 3px solid #000000 !important;
+        border-radius: 0 !important;
+        padding: 1rem 1.5rem !important;
+        margin: 1rem 0 !important;
+        color: #000000 !important;
+        font-family: 'Times New Roman', Georgia, serif !important;
+        font-style: normal !important;
+        page-break-inside: avoid;
+    }
+
+    .math-box p, .math-box div {
+        color: #000000 !important;
+    }
+
+    /* Ensure charts display nicely on white paper print */
+    .chart-container {
+        page-break-inside: avoid;
+        max-height: 220px !important;
+        margin-top: 1rem !important;
+    }
+    
+    canvas {
+        max-width: 100% !important;
+    }
+}

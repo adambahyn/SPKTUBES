@@ -1,0 +1,846 @@
+Found 6 occurrences of normalization.
+
+--- Occurrence 1 ---
+AHP is widely used but relies on subjective expert judgment, which 
+may introduce biases and inconsistencies, particularly when evaluating sustainabil -
+ity across culturally and economically diverse regions [ 15]. TOPSIS, while useful for 
+proximity-based ranking, often suffers from sensitivity to normalization and lacks a 
+clear theoretical foundation for weighting criteria[ 16]. DEA, though powerful for effi -
+ciency analysis, requires large datasets and is limited when evaluating both beneficial 
+and non-beneficial criteria simultaneously [ 17].
+In contrast to traditional weighting methods that rely heavily on subjective expert 
+opinions, the MEREC (Method based on the Removal Effects of Criteria) approach 
+offers an objective, data-driven mechanism for determining the relative importance of 
+evaluation criteria. Rather than requiring decision-makers to assign weights based on 
+linguistic judgments or preference scales, MEREC systematically evaluates how the 
+elimination of each criterion affects the overall performance of the alternatives under 
+study. This marginal impact analysis ensures that criteria are weighted according to 
+their actual influence on the decision-making process, thus eliminating the inconsis -
+tencies and biases that often accompany human judgment [ 18,
+
+--- Occurrence 2 ---
+lues are present. This transformation retains the rela -
+tive differences among values while enabling proper computational application.
+ X=
+x11x12 ···
+x21x22 ···
+.........x1j ···x1m
+x2j ···x2m
+.........
+xi1xi2 ···
+.........
+xn1xn2 ···xij ···xim
+.........
+xnj ···xnm
+
+ (1)
+Step 2: Normalization of the decision matrix.
+The normalized decision matrix Y is formed to eliminate discrepancies in measurement scales, as Eq. (2). The criteria 
+are divided into benefit-type ( B) and cost-type or non-benefit-type ( H) indicators. Normalization is performed as Eq. (3). 
+This transformation ensures that higher values in the normalized matrix always represent more favorable outcomes.
+ Y=
+y11y12 ···
+y21y22 ···
+.........y1j ···y1m
+y2j ···y2m
+.........
+yi1yi2 ···
+.........
+yn1yn2 ···yij ···yim
+.........
+ynj ···ynm
+
+ (2)
+ yij={mini(xij)
+xij∀j∈B ;i=1,...,n
+xij
+maxi(xij)∀j∈H;i=1,...,n (3)
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 7 / 20Step 3: Calculation of the initial performance score.
+The overall performance score Si of each alternative i is computed using a logarithmic aggregation function as Eq. (4) 
+and demonstrated in Fig 1 . This function balances the impact of high and low values, providing a neutral and comprehen -
+sive pe
+
+--- Occurrence 3 ---
+·xij ···xim
+.........
+xnj ···xnm
+
+ (1)
+Step 2: Normalization of the decision matrix.
+The normalized decision matrix Y is formed to eliminate discrepancies in measurement scales, as Eq. (2). The criteria 
+are divided into benefit-type ( B) and cost-type or non-benefit-type ( H) indicators. Normalization is performed as Eq. (3). 
+This transformation ensures that higher values in the normalized matrix always represent more favorable outcomes.
+ Y=
+y11y12 ···
+y21y22 ···
+.........y1j ···y1m
+y2j ···y2m
+.........
+yi1yi2 ···
+.........
+yn1yn2 ···yij ···yim
+.........
+ynj ···ynm
+
+ (2)
+ yij={mini(xij)
+xij∀j∈B ;i=1,...,n
+xij
+maxi(xij)∀j∈H;i=1,...,n (3)
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 7 / 20Step 3: Calculation of the initial performance score.
+The overall performance score Si of each alternative i is computed using a logarithmic aggregation function as Eq. (4) 
+and demonstrated in Fig 1 . This function balances the impact of high and low values, providing a neutral and comprehen -
+sive performance evaluation.
+ Si=ln
+1+
+1
+mm/summationdisplay
+j=1/vextendsingle/vextendsingleln(yij)/vextendsingle/vextendsingle
+
+i=1,...,n
+ (4)
+Step 4: Performance evaluation with eliminated criteria.
+To determine the importance of each crite
+
+--- Occurrence 4 ---
+of absolute deviations between the original and 
+adjusted performance scores according to Eq. (6). This value quantifies the overall influence of each criterion across all 
+alternatives.
+ Ej=n/summationdisplay
+i=1/vextendsingle/vextendsingleS′
+ij–Si/vextendsingle/vextendsinglej=1,...,m
+ (6)
+Step 6: Normalization of criterion weights.
+Fig 1 . The weights of the comparative analysis.
+https://doi.org/10.1371/journal.pone.0324538.g001
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 8 / 20The objective weight wj of each criterion is calculated by normalizing the removal effects according to Eq. (7). Larger 
+weights reflect greater influence on overall performance, ensuring that more impactful criteria are emphasized.
+ wj=Ej∑m
+j=1Ejj=1,...,m
+ (7)
+Step 7: Evaluation of non-beneficial (input) indicators.
+The non-beneficial criteria are aggregated ( Ii) for each alternative i using Eq. (8).
+ Ii=g∑
+j=1wj(maxi(xij)–xij
+mini(xij))
+i=1,...,n
+ (8)
+where g represents the number of non-beneficial criteria. This captures how well each alternative minimizes undesir -
+able impacts.
+Step 8: Linear transformation of non-beneficial scores
+A normalized non-beneficial score (Ii) is computed through linear scaling according to Eq. (9). This ensures that the 
+lowest-performing alter
+
+--- Occurrence 5 ---
+le each row represents one of the 16 countries under consideration. The MEREC-OCRA 
+method, described in detail in the Methodology section, was then applied to evaluate the sustainability performance of the 
+countries. This was done by first constructing a decision matrix ( Table 3 ), followed by a normalization process ( Table 4 ) 
+using Equation (3) to convert all values into a common scale that accommodates both beneficial and non-beneficial criteria. 
+This transformation enabled a consistent and fair comparison of all countries across all selected dimensions.
+At this essential stage of the decision-making process, a comprehensive evaluation of the overall performance of all 
+available alternatives is considered imperative. This critical assessment is carried out through the implementation of Eq. 
+(4), which functions as the primary computational tool for quantifying the consolidated performance score of each alterna -
+tive. Through the application of this equation, a numerical representation of each alternative’s relative efficacy and suitabil -
+ity—based on the full set of evaluation criteria—is obtained. The results derived from these calculations are systematically 
+illustrated in Fig 2 , which presents the total performance scores of all countries under consideration. As 
+
+--- Occurrence 6 ---
+ consistently appear among the top-performing 
+countries, while India, Saudi Arabia, and Iraq are ranked toward the bottom across all three methods. Minor discrepan -
+cies in middle-ranking countries—such as Lebanon, Sri Lanka, and Turkey—can be attributed to differences in how each 
+method handles normalization and distance computations. Fig 6  illustrates the comparative rankings across all meth -
+ods, highlighting both convergence and divergence. The overall similarity of the results supports the robustness of the 
+MEREC-OCRA model and its capacity to deliver stable, reproducible decisions even when cross-validated with alterna -
+tive MCDM approaches.
+Fig 6 . The sensitivity analysis results.
+https://doi.org/10.1371/journal.pone.0324538.g006
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 17 / 20Policy recommendations
+Based on the final evaluation results derived from the MEREC-OCRA method, a series of actionable recommendations 
+are proposed to support policymakers across South Asia, West Asia, and Africa in enhancing sustainability outcomes 
+within the SREB context. These recommendations are informed by the weighted criteria and observed performance dis -
+parities among the sixteen evaluated countries.
+First, it is recommended that countries exhibiting
+Found 39 occurrences of MEREC.
+
+--- MEREC Occurrence 1 ---
+ies situated in South Asia, West Asia, and Africa—regions 
+that are central to the SREB but face diverse environmental and socio-economic 
+challenges. To achieve this, a novel hybrid multi-criteria decision-making approach is 
+proposed, combining the Method based on the Removal Effects of Criteria (MEREC) 
+and Operational Competitiveness Ratings Analysis (OCRA). The MEREC method 
+is used to determine objective weights for sustainability indicators by evaluating the 
+impact of each criterion’s exclusion, while OCRA is employed to evaluate and rank 
+countries based on both beneficial and non-beneficial indicators. The findings reveal 
+significant disparities in sustainability performance across the studied countries. 
+Israel ranked highest in sustainability, followed by Sri Lanka and Nepal, while India 
+showed the lowest performance. These results provide valuable benchmarks and 
+strategic insights for regional policy planning and sustainable development efforts 
+within the SREB framework.
+Introduction
+The Silk Road Economic Belt (SREB) represents one of the most ambitious and 
+transformative global development initiatives of the 21st century [ 1]. It seeks to revive 
+the legacy of the ancient Silk Road by fostering infrastructure, trade, and cultural 
+connectivity across Asia, Eur
+
+--- MEREC Occurrence 2 ---
+entral to the SREB but face diverse environmental and socio-economic 
+challenges. To achieve this, a novel hybrid multi-criteria decision-making approach is 
+proposed, combining the Method based on the Removal Effects of Criteria (MEREC) 
+and Operational Competitiveness Ratings Analysis (OCRA). The MEREC method 
+is used to determine objective weights for sustainability indicators by evaluating the 
+impact of each criterion’s exclusion, while OCRA is employed to evaluate and rank 
+countries based on both beneficial and non-beneficial indicators. The findings reveal 
+significant disparities in sustainability performance across the studied countries. 
+Israel ranked highest in sustainability, followed by Sri Lanka and Nepal, while India 
+showed the lowest performance. These results provide valuable benchmarks and 
+strategic insights for regional policy planning and sustainable development efforts 
+within the SREB framework.
+Introduction
+The Silk Road Economic Belt (SREB) represents one of the most ambitious and 
+transformative global development initiatives of the 21st century [ 1]. It seeks to revive 
+the legacy of the ancient Silk Road by fostering infrastructure, trade, and cultural 
+connectivity across Asia, Europe, and Africa [ 2]. As part of this initiative, the modern 
+Silk Ro
+
+--- MEREC Occurrence 3 ---
+ that can capture multi- 
+dimensional sustainability performance across countries with varied data quality, 
+development levels, and policy environments.
+This study introduces a hybrid Multi-Criteria Decision-Making (MCDM) approach 
+that combines the Method based on the Removal Effects of Criteria (MEREC) and 
+Operational Competitiveness Ratings Analysis (OCRA). This integration—referred to 
+as the MEREC-OCRA method—was chosen over more traditional MCDM techniques 
+such as the Analytic Hierarchy Process (AHP), Technique for Order Preference by 
+Similarity to Ideal Solution (TOPSIS), and Data Envelopment Analysis (DEA) for 
+several reasons. AHP is widely used but relies on subjective expert judgment, which 
+may introduce biases and inconsistencies, particularly when evaluating sustainabil -
+ity across culturally and economically diverse regions [ 15]. TOPSIS, while useful for 
+proximity-based ranking, often suffers from sensitivity to normalization and lacks a 
+clear theoretical foundation for weighting criteria[ 16]. DEA, though powerful for effi -
+ciency analysis, requires large datasets and is limited when evaluating both beneficial 
+and non-beneficial criteria simultaneously [ 17].
+In contrast to traditional weighting methods that rely heavily on subjective expert 
+opinions, t
+
+--- MEREC Occurrence 4 ---
+lity, 
+development levels, and policy environments.
+This study introduces a hybrid Multi-Criteria Decision-Making (MCDM) approach 
+that combines the Method based on the Removal Effects of Criteria (MEREC) and 
+Operational Competitiveness Ratings Analysis (OCRA). This integration—referred to 
+as the MEREC-OCRA method—was chosen over more traditional MCDM techniques 
+such as the Analytic Hierarchy Process (AHP), Technique for Order Preference by 
+Similarity to Ideal Solution (TOPSIS), and Data Envelopment Analysis (DEA) for 
+several reasons. AHP is widely used but relies on subjective expert judgment, which 
+may introduce biases and inconsistencies, particularly when evaluating sustainabil -
+ity across culturally and economically diverse regions [ 15]. TOPSIS, while useful for 
+proximity-based ranking, often suffers from sensitivity to normalization and lacks a 
+clear theoretical foundation for weighting criteria[ 16]. DEA, though powerful for effi -
+ciency analysis, requires large datasets and is limited when evaluating both beneficial 
+and non-beneficial criteria simultaneously [ 17].
+In contrast to traditional weighting methods that rely heavily on subjective expert 
+opinions, the MEREC (Method based on the Removal Effects of Criteria) approach 
+offers an objective, data-driven 
+
+--- MEREC Occurrence 5 ---
+ for weighting criteria[ 16]. DEA, though powerful for effi -
+ciency analysis, requires large datasets and is limited when evaluating both beneficial 
+and non-beneficial criteria simultaneously [ 17].
+In contrast to traditional weighting methods that rely heavily on subjective expert 
+opinions, the MEREC (Method based on the Removal Effects of Criteria) approach 
+offers an objective, data-driven mechanism for determining the relative importance of 
+evaluation criteria. Rather than requiring decision-makers to assign weights based on 
+linguistic judgments or preference scales, MEREC systematically evaluates how the 
+elimination of each criterion affects the overall performance of the alternatives under 
+study. This marginal impact analysis ensures that criteria are weighted according to 
+their actual influence on the decision-making process, thus eliminating the inconsis -
+tencies and biases that often accompany human judgment [ 18,19]. The objectivity 
+and reproducibility of this technique make it particularly suitable for large-scale sus -
+tainability assessments, where transparency and analytical rigor are essential.
+Complementing MEREC is the Operational Competitiveness Ratings Analysis 
+(OCRA), which serves as a robust evaluation tool for assessing alternatives across 
+both b
+
+--- MEREC Occurrence 6 ---
+t 
+opinions, the MEREC (Method based on the Removal Effects of Criteria) approach 
+offers an objective, data-driven mechanism for determining the relative importance of 
+evaluation criteria. Rather than requiring decision-makers to assign weights based on 
+linguistic judgments or preference scales, MEREC systematically evaluates how the 
+elimination of each criterion affects the overall performance of the alternatives under 
+study. This marginal impact analysis ensures that criteria are weighted according to 
+their actual influence on the decision-making process, thus eliminating the inconsis -
+tencies and biases that often accompany human judgment [ 18,19]. The objectivity 
+and reproducibility of this technique make it particularly suitable for large-scale sus -
+tainability assessments, where transparency and analytical rigor are essential.
+Complementing MEREC is the Operational Competitiveness Ratings Analysis 
+(OCRA), which serves as a robust evaluation tool for assessing alternatives across 
+both beneficial and non-beneficial indicators. OCRA utilizes a linear preference-based collection and analysis, decision to publish, or 
+preparation of the manuscript.
+Competing interests: The authors have 
+declared that no competing interests exist.
+
+PLOS One | https://doi.org/10.1371/jo
+
+--- MEREC Occurrence 7 ---
+, thus eliminating the inconsis -
+tencies and biases that often accompany human judgment [ 18,19]. The objectivity 
+and reproducibility of this technique make it particularly suitable for large-scale sus -
+tainability assessments, where transparency and analytical rigor are essential.
+Complementing MEREC is the Operational Competitiveness Ratings Analysis 
+(OCRA), which serves as a robust evaluation tool for assessing alternatives across 
+both beneficial and non-beneficial indicators. OCRA utilizes a linear preference-based collection and analysis, decision to publish, or 
+preparation of the manuscript.
+Competing interests: The authors have 
+declared that no competing interests exist.
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 3 / 20structure, enabling the clear and consistent interpretation of results, especially when dealing with heterogeneous datasets 
+[20]. Its ability to process input (cost-type) and output (benefit-type) criteria independently allows for a more granular and 
+realistic evaluation of each alternative’s performance. When combined, the MEREC-OCRA methodology offers a compre -
+hensive hybrid framework that supports both objective weighting and structured ranking, bridging the gap between meth -
+odological rigor and practical usability
+
+--- MEREC Occurrence 8 ---
+r and consistent interpretation of results, especially when dealing with heterogeneous datasets 
+[20]. Its ability to process input (cost-type) and output (benefit-type) criteria independently allows for a more granular and 
+realistic evaluation of each alternative’s performance. When combined, the MEREC-OCRA methodology offers a compre -
+hensive hybrid framework that supports both objective weighting and structured ranking, bridging the gap between meth -
+odological rigor and practical usability. This integration ensures a balanced, transparent, and reproducible assessment of 
+sustainability outcomes, making the approach well-suited to real-world decision-making contexts where data availability, 
+quality, and consistency may vary significantly. Moreover, the adaptability of MEREC-OCRA across multiple domains and 
+scales enhances its potential application for guiding evidence-based policy development in complex, multi-dimensional 
+environments.
+Accordingly, the primary objective pursued in this study is the application of the MEREC-OCRA method for the com -
+prehensive assessment of sustainability across sixteen countries located within the geographical scope of the Silk Road 
+Economic Belt (SREB), with particular attention given to the regions of South Asia, West Asia, and Africa
+
+--- MEREC Occurrence 9 ---
+tical usability. This integration ensures a balanced, transparent, and reproducible assessment of 
+sustainability outcomes, making the approach well-suited to real-world decision-making contexts where data availability, 
+quality, and consistency may vary significantly. Moreover, the adaptability of MEREC-OCRA across multiple domains and 
+scales enhances its potential application for guiding evidence-based policy development in complex, multi-dimensional 
+environments.
+Accordingly, the primary objective pursued in this study is the application of the MEREC-OCRA method for the com -
+prehensive assessment of sustainability across sixteen countries located within the geographical scope of the Silk Road 
+Economic Belt (SREB), with particular attention given to the regions of South Asia, West Asia, and Africa. These regions, 
+selected for their strategic significance and developmental complexity, are characterized by diverse environmental con -
+ditions, economic structures, and social dynamics. In order to capture the multi-faceted nature of sustainability, a total of 
+fourteen quantitative indicators spanning three critical dimensions—environmental, economic, and social—have been 
+identified and utilized in the evaluation process. Through the implementation of the MEREC-OCRA methodolo
+
+--- MEREC Occurrence 10 ---
+ignificantly. Moreover, the adaptability of MEREC-OCRA across multiple domains and 
+scales enhances its potential application for guiding evidence-based policy development in complex, multi-dimensional 
+environments.
+Accordingly, the primary objective pursued in this study is the application of the MEREC-OCRA method for the com -
+prehensive assessment of sustainability across sixteen countries located within the geographical scope of the Silk Road 
+Economic Belt (SREB), with particular attention given to the regions of South Asia, West Asia, and Africa. These regions, 
+selected for their strategic significance and developmental complexity, are characterized by diverse environmental con -
+ditions, economic structures, and social dynamics. In order to capture the multi-faceted nature of sustainability, a total of 
+fourteen quantitative indicators spanning three critical dimensions—environmental, economic, and social—have been 
+identified and utilized in the evaluation process. Through the implementation of the MEREC-OCRA methodology, a sys -
+tematic effort is made to determine the relative sustainability performance of each country by examining their strengths 
+and weaknesses across the selected criteria. The objective weighting of indicators through MEREC, combined with the 
+struc
+
+--- MEREC Occurrence 11 ---
+s, and social dynamics. In order to capture the multi-faceted nature of sustainability, a total of 
+fourteen quantitative indicators spanning three critical dimensions—environmental, economic, and social—have been 
+identified and utilized in the evaluation process. Through the implementation of the MEREC-OCRA methodology, a sys -
+tematic effort is made to determine the relative sustainability performance of each country by examining their strengths 
+and weaknesses across the selected criteria. The objective weighting of indicators through MEREC, combined with the 
+structured ranking capabilities of OCRA, facilitates an evidence-based understanding of how countries are progressing 
+along various sustainability dimensions. The analysis is designed not only to highlight which countries perform better 
+overall but also to uncover the key drivers that enable progress, as well as the critical bottlenecks that hinder develop -
+ment in specific national contexts. Moreover, the sustainability evaluation is aligned with the broader global agenda set 
+forth by the United Nations Sustainable Development Goals (SDGs). By mapping the selected indicators to relevant SDG 
+targets—such as those concerning economic productivity, environmental conservation, and social well-being—the study 
+seeks to
+
+--- MEREC Occurrence 12 ---
+ evaluation process. Through the implementation of the MEREC-OCRA methodology, a sys -
+tematic effort is made to determine the relative sustainability performance of each country by examining their strengths 
+and weaknesses across the selected criteria. The objective weighting of indicators through MEREC, combined with the 
+structured ranking capabilities of OCRA, facilitates an evidence-based understanding of how countries are progressing 
+along various sustainability dimensions. The analysis is designed not only to highlight which countries perform better 
+overall but also to uncover the key drivers that enable progress, as well as the critical bottlenecks that hinder develop -
+ment in specific national contexts. Moreover, the sustainability evaluation is aligned with the broader global agenda set 
+forth by the United Nations Sustainable Development Goals (SDGs). By mapping the selected indicators to relevant SDG 
+targets—such as those concerning economic productivity, environmental conservation, and social well-being—the study 
+seeks to offer insights that are directly relevant to international development frameworks. The ultimate aim is to produce a 
+set of policy-relevant findings that can support decision-makers, planners, and international development stakeholders in 
+form
+
+--- MEREC Occurrence 13 ---
+stinctions and challenges inherent in South Asia, West Asia, and Africa.
+The structure of the paper is organized as follows: following this introduction, The Literature Review section reviews the 
+relevant literature on sustainability evaluation and MCDM methods. The Methodology section details the MEREC-OCRA 
+methodology. The Numerical Results and Sensitivity Analysis sections present the numerical analysis and country rank -
+ings. The Policy Recommendations section discusses the implications of the findings, and the Conclusion section con -
+cludes the study by outlining policy recommendations and future research directions.
+Literature review
+MCDM approaches and its applications
+In this section, we present a comprehensive literature review on sustainable development priorities and the application of 
+multi-criteria decision-making (MCDM) methods. In recent years, MCDM models have gained significant credibility and are 
+increasingly employed across numerous domains, particularly those associated with sustainable development. Several 
+studies have explored the application of MCDM approaches in sustainable development. Meanwhile, Sadaf et al. used the 
+MCDM method to select suitable wave energy technology for sustainable development [ 21]. Mohammad et al. integrated 
+DEMATEL, ANP, 
+
+--- MEREC Occurrence 14 ---
+ormulate policies to effectively remove barriers to sustainable development of the 
+biofuel industry in India [ 25].
+Innovative model combinations and appropriate approaches also play an important role in expanding the use of MCDM 
+in sustainable development. In their study, Karahan et al. combined MEREC and AROMAN to determine the level of 
+sustainable competitiveness of Turkey compared to its neighbouring countries [ 26]. Bera & Satapathy used the OCRA 
+methodology to analyse and rank the most important urban development challenges in Odisha’s urban renewal plan to 
+achieve India’s sustainable development goals [ 27]. This suggests that new MCDM combinations can work well in this 
+area. Wang et al. applied the integrated DEA (Data Envelopment Analysis) and MCDM model to evaluate global container 
+shipping companies for sustainable development orientation, emphasising the usefulness of the model in evaluating 
+potential investment outcomes [ 28]. Łuczak & Just used the MCDM approach with an optimal tail selection to assess the 
+sustainable development of territorial units [ 29].
+This analysis, founded on a robust and comprehensive framework for the prudent application of multi-criteria decision- 
+making methods, provides an in-depth review of the existing body of literature on v
+
+--- MEREC Occurrence 15 ---
+ts in which they have been applied. The goal is 
+to determine the weights of criteria and sub-criteria for evaluating sustainable development goals through a multi-criteria 
+assessment methodology. The most commonly used methods for weighting in MCDM are presented in Table 1 . In recent 
+years, the MEREC method, along with its integration into hybrid approaches with other MCDM techniques, has gained sig -
+nificant traction in MCDM research due to its structured and objective analytical capabilities. This growing trend highlights 
+Table 1 . MCDM application for sustainable development problem.
+No. Author(s) Year CMDM Method Other Method
+1 Li et al. [ 30] 2020 TOPSIS & VIKOR ANP
+2 Aljaghoub et al. [ 31] 2022 TOPSIS
+3 Zhao et al. [ 32] 2022 TOPSIS Entropy
+4 Foroozesh et al. [ 33] 2022 AHP & TOPSIS GIS
+5 Ebad et al. [ 34] 2020 TOPSIS
+6 Saraswat & Digalwar [ 35] 2021 AHP Entropy & Fuzzy
+7 Kaya & Sema [ 36] 2020 MABAC & WASPAS MAIRCA
+8 Brodny & Tutak [ 37] 2023 CRITIC Entropy
+9 Paz et al. [ 38] 2021 TOPSIS
+10 Alimohammadlou & Khoshsepehr [ 39] 2022 AHP & WASPAS
+11 Bilgili et al. [ 40] 2022 IF-TOPSIS
+12 Liu et al. [ 41] 2022 TODIM-ERA
+13 Ecer [ 42] 2021 BWM
+14 Brodny & Tutak [ 43] 2021 TOPSIS-VIKOR-MOORA & COPRAS
+15 Solangi et al. [ 44] 2021 AHP & TOPSIS
+https://doi.org/10.1371/journal.
+
+--- MEREC Occurrence 16 ---
+s like sustainable development. For 
+this study, the selection of an appropriate model was guided by the need to address the multifaceted challenges of sus -
+tainable development assessment in the MSR region, where diverse economic, environmental, and social factors must be 
+carefully balanced. The MEREC method was chosen for its ability to provide objective and unbiased criterion weighting, 
+a feature that is critical in evaluating renewable energy projects, where decision-making requires reconciling technical 
+reliability, environmental sustainability, economic feasibility, and social acceptability. Unlike other MCDM methods, such 
+as AHP (Analytic Hierarchy Process) or fuzzy logic, which often depend on expert judgements or linguistic evaluations 
+that can introduce subjective biases, MEREC employs an entropy-based approach to calculate weights. By systemati -
+cally removing each criteria and analysing its impact on the overall decision-making process, MEREC ensures a fair and 
+impartial weighting process, providing a transparent and credible framework. This objectivity enhances the reliability of the 
+results and makes MEREC particularly well-suited for complex applications in sustainable development, where impartiality 
+and methodological rigour are paramount.
+The silk road 
+
+--- MEREC Occurrence 17 ---
+nciling technical 
+reliability, environmental sustainability, economic feasibility, and social acceptability. Unlike other MCDM methods, such 
+as AHP (Analytic Hierarchy Process) or fuzzy logic, which often depend on expert judgements or linguistic evaluations 
+that can introduce subjective biases, MEREC employs an entropy-based approach to calculate weights. By systemati -
+cally removing each criteria and analysing its impact on the overall decision-making process, MEREC ensures a fair and 
+impartial weighting process, providing a transparent and credible framework. This objectivity enhances the reliability of the 
+results and makes MEREC particularly well-suited for complex applications in sustainable development, where impartiality 
+and methodological rigour are paramount.
+The silk road economic belt related studies
+The SREB, as a strategic component of the Belt and Road Initiative (BRI), has attracted considerable scholarly attention 
+in recent years due to its implications for sustainable development, economic diplomacy, environmental governance, and 
+regional cooperation. Several empirical and theoretical studies have explored diverse aspects of this transcontinental 
+initiative, offering nuanced insights into its environmental, economic, and socio-political dimensions.
+Yan
+
+--- MEREC Occurrence 18 ---
+rocess) or fuzzy logic, which often depend on expert judgements or linguistic evaluations 
+that can introduce subjective biases, MEREC employs an entropy-based approach to calculate weights. By systemati -
+cally removing each criteria and analysing its impact on the overall decision-making process, MEREC ensures a fair and 
+impartial weighting process, providing a transparent and credible framework. This objectivity enhances the reliability of the 
+results and makes MEREC particularly well-suited for complex applications in sustainable development, where impartiality 
+and methodological rigour are paramount.
+The silk road economic belt related studies
+The SREB, as a strategic component of the Belt and Road Initiative (BRI), has attracted considerable scholarly attention 
+in recent years due to its implications for sustainable development, economic diplomacy, environmental governance, and 
+regional cooperation. Several empirical and theoretical studies have explored diverse aspects of this transcontinental 
+initiative, offering nuanced insights into its environmental, economic, and socio-political dimensions.
+Yang et al. (2024) examined the ecological environment, public service, and tourism economy coordination along the 
+SREB, using a composite index system integrating single-in
+
+--- MEREC Occurrence 19 ---
+ calculate weights. By systemati -
+cally removing each criteria and analysing its impact on the overall decision-making process, MEREC ensures a fair and 
+impartial weighting process, providing a transparent and credible framework. This objectivity enhances the reliability of the 
+results and makes MEREC particularly well-suited for complex applications in sustainable development, where impartiality 
+and methodological rigour are paramount.
+The silk road economic belt related studies
+The SREB, as a strategic component of the Belt and Road Initiative (BRI), has attracted considerable scholarly attention 
+in recent years due to its implications for sustainable development, economic diplomacy, environmental governance, and 
+regional cooperation. Several empirical and theoretical studies have explored diverse aspects of this transcontinental 
+initiative, offering nuanced insights into its environmental, economic, and socio-political dimensions.
+Yang et al. (2024) examined the ecological environment, public service, and tourism economy coordination along the 
+SREB, using a composite index system integrating single-index quantification, multi-index synthesis, and poly-criteria 
+integration [ 45]. Their findings indicated spatial-temporal heterogeneity, with the Southwest region perform
+
+--- MEREC Occurrence 20 ---
+brid MCDM methodology.
+While previous studies on the SREB have focused on regional coordination, CO ₂ emission dynamics, and inclusive 
+development, they often relied on descriptive models or single-country data. In contrast, this study offers a cross-national, 
+indicator-based assessment using the MEREC-OCRA framework, enabling a structured comparison of 16 countries. 
+Unlike qualitative or bibliometric approaches, the proposed method quantifies sustainability performance through both 
+beneficial and non-beneficial criteria. This not only complements existing findings but also extends the discourse with a 
+replicable, data-driven evaluation across the SREB.
+Methodology
+In this study, a hybrid MCDM approach—referred to as MEREC-OCRA—is employed to assess and rank alternatives based 
+on multiple sustainability indicators. This method integrates the MEREC for determining objective weights with the OCRA 
+for evaluating the performance of alternatives. MEREC calculates the importance of each criterion by measuring the impact 
+of its exclusion on the overall performance of alternatives, with higher weights assigned to those criteria whose removal 
+results in larger deviations. The OCRA component then assesses alternatives based on both beneficial (desirable) and 
+non- beneficial (unde
+
+--- MEREC Occurrence 21 ---
+ method quantifies sustainability performance through both 
+beneficial and non-beneficial criteria. This not only complements existing findings but also extends the discourse with a 
+replicable, data-driven evaluation across the SREB.
+Methodology
+In this study, a hybrid MCDM approach—referred to as MEREC-OCRA—is employed to assess and rank alternatives based 
+on multiple sustainability indicators. This method integrates the MEREC for determining objective weights with the OCRA 
+for evaluating the performance of alternatives. MEREC calculates the importance of each criterion by measuring the impact 
+of its exclusion on the overall performance of alternatives, with higher weights assigned to those criteria whose removal 
+results in larger deviations. The OCRA component then assesses alternatives based on both beneficial (desirable) and 
+non- beneficial (undesirable) indicators. The final output is a comprehensive performance ranking that reflects both objective 
+weighting and evaluation consistency. The computational steps of the MEREC-OCRA approach are outlined as follows:
+Step 1: Construction of the decision matrix.
+The initial decision matrix X is constructed as Eq. (1), where xij denotes the performance score of alternative i with 
+respect to criterion j, for i=1,...,n and j=1,
+
+--- MEREC Occurrence 22 ---
+isting findings but also extends the discourse with a 
+replicable, data-driven evaluation across the SREB.
+Methodology
+In this study, a hybrid MCDM approach—referred to as MEREC-OCRA—is employed to assess and rank alternatives based 
+on multiple sustainability indicators. This method integrates the MEREC for determining objective weights with the OCRA 
+for evaluating the performance of alternatives. MEREC calculates the importance of each criterion by measuring the impact 
+of its exclusion on the overall performance of alternatives, with higher weights assigned to those criteria whose removal 
+results in larger deviations. The OCRA component then assesses alternatives based on both beneficial (desirable) and 
+non- beneficial (undesirable) indicators. The final output is a comprehensive performance ranking that reflects both objective 
+weighting and evaluation consistency. The computational steps of the MEREC-OCRA approach are outlined as follows:
+Step 1: Construction of the decision matrix.
+The initial decision matrix X is constructed as Eq. (1), where xij denotes the performance score of alternative i with 
+respect to criterion j, for i=1,...,n and j=1,...,m. To ensure compatibility with the MEREC method, which assumes 
+non-negative values, a linear translation is applied if any
+
+--- MEREC Occurrence 23 ---
+EB.
+Methodology
+In this study, a hybrid MCDM approach—referred to as MEREC-OCRA—is employed to assess and rank alternatives based 
+on multiple sustainability indicators. This method integrates the MEREC for determining objective weights with the OCRA 
+for evaluating the performance of alternatives. MEREC calculates the importance of each criterion by measuring the impact 
+of its exclusion on the overall performance of alternatives, with higher weights assigned to those criteria whose removal 
+results in larger deviations. The OCRA component then assesses alternatives based on both beneficial (desirable) and 
+non- beneficial (undesirable) indicators. The final output is a comprehensive performance ranking that reflects both objective 
+weighting and evaluation consistency. The computational steps of the MEREC-OCRA approach are outlined as follows:
+Step 1: Construction of the decision matrix.
+The initial decision matrix X is constructed as Eq. (1), where xij denotes the performance score of alternative i with 
+respect to criterion j, for i=1,...,n and j=1,...,m. To ensure compatibility with the MEREC method, which assumes 
+non-negative values, a linear translation is applied if any negative values are present. This transformation retains the rela -
+tive differences among values whil
+
+--- MEREC Occurrence 24 ---
+er deviations. The OCRA component then assesses alternatives based on both beneficial (desirable) and 
+non- beneficial (undesirable) indicators. The final output is a comprehensive performance ranking that reflects both objective 
+weighting and evaluation consistency. The computational steps of the MEREC-OCRA approach are outlined as follows:
+Step 1: Construction of the decision matrix.
+The initial decision matrix X is constructed as Eq. (1), where xij denotes the performance score of alternative i with 
+respect to criterion j, for i=1,...,n and j=1,...,m. To ensure compatibility with the MEREC method, which assumes 
+non-negative values, a linear translation is applied if any negative values are present. This transformation retains the rela -
+tive differences among values while enabling proper computational application.
+ X=
+x11x12 ···
+x21x22 ···
+.........x1j ···x1m
+x2j ···x2m
+.........
+xi1xi2 ···
+.........
+xn1xn2 ···xij ···xim
+.........
+xnj ···xnm
+
+ (1)
+Step 2: Normalization of the decision matrix.
+The normalized decision matrix Y is formed to eliminate discrepancies in measurement scales, as Eq. (2). The criteria 
+are divided into benefit-type ( B) and cost-type or non-benefit-type ( H) indicators. Normalization is performed as Eq. (3). 
+This transformation e
+
+--- MEREC Occurrence 25 ---
+the MEREC-OCRA approach are outlined as follows:
+Step 1: Construction of the decision matrix.
+The initial decision matrix X is constructed as Eq. (1), where xij denotes the performance score of alternative i with 
+respect to criterion j, for i=1,...,n and j=1,...,m. To ensure compatibility with the MEREC method, which assumes 
+non-negative values, a linear translation is applied if any negative values are present. This transformation retains the rela -
+tive differences among values while enabling proper computational application.
+ X=
+x11x12 ···
+x21x22 ···
+.........x1j ···x1m
+x2j ···x2m
+.........
+xi1xi2 ···
+.........
+xn1xn2 ···xij ···xim
+.........
+xnj ···xnm
+
+ (1)
+Step 2: Normalization of the decision matrix.
+The normalized decision matrix Y is formed to eliminate discrepancies in measurement scales, as Eq. (2). The criteria 
+are divided into benefit-type ( B) and cost-type or non-benefit-type ( H) indicators. Normalization is performed as Eq. (3). 
+This transformation ensures that higher values in the normalized matrix always represent more favorable outcomes.
+ Y=
+y11y12 ···
+y21y22 ···
+.........y1j ···y1m
+y2j ···y2m
+.........
+yi1yi2 ···
+.........
+yn1yn2 ···yij ···yim
+.........
+ynj ···ynm
+
+ (2)
+ yij={mini(xij)
+xij∀j∈B ;i=1,...,n
+xij
+maxi(xij
+
+--- MEREC Occurrence 26 ---
+ial conditions. By relying on globally trusted repositories, potential biases associated with selective 
+reporting or outdated information were minimized, thereby strengthening the objectivity and empirical relevance of the 
+results.
+To further reinforce the real-world applicability of the proposed MEREC-OCRA model, the selected criteria were aligned 
+with major global sustainability benchmarks, specifically the United Nations SDGs. Indicators such as greenhouse gas 
+emissions (A12), methane emissions (A13), and nitrous oxide emissions (A14) directly reflect targets outlined in SDG 13 
+(Climate Action). Similarly, GDP per capita (A2), human capital index (A10), and gross capital formation (A11) correspond 
+to SDGs 8 (Decent Work and Economic Growth) and 9 (Industry, Innovation, and Infrastructure). The alignment of the 
+chosen indicators with internationally recognized goals validates the MEREC-OCRA framework as an appropriate and 
+meaningful tool for assessing sustainability in complex, real-world contexts. Although empirical case studies were not con -
+ducted, the model’s outcomes show strong coherence with well-established sustainability trends and global development 
+priorities, thereby affirming the external validity of the proposed methodological approach.
+A total of 14 sus
+
+--- MEREC Occurrence 27 ---
+Action). Similarly, GDP per capita (A2), human capital index (A10), and gross capital formation (A11) correspond 
+to SDGs 8 (Decent Work and Economic Growth) and 9 (Industry, Innovation, and Infrastructure). The alignment of the 
+chosen indicators with internationally recognized goals validates the MEREC-OCRA framework as an appropriate and 
+meaningful tool for assessing sustainability in complex, real-world contexts. Although empirical case studies were not con -
+ducted, the model’s outcomes show strong coherence with well-established sustainability trends and global development 
+priorities, thereby affirming the external validity of the proposed methodological approach.
+A total of 14 sustainability indicators were selected and categorized into beneficial and non-beneficial criteria, as detailed 
+in Table 2 . These indicators served as the foundation for building the decision matrix. Each column in the matrix corre -
+sponds to a specific criterion, while each row represents one of the 16 countries under consideration. The MEREC-OCRA 
+method, described in detail in the Methodology section, was then applied to evaluate the sustainability performance of the 
+countries. This was done by first constructing a decision matrix ( Table 3 ), followed by a normalization process ( Table 4 )
+
+--- MEREC Occurrence 28 ---
+categorized into beneficial and non-beneficial criteria, as detailed 
+in Table 2 . These indicators served as the foundation for building the decision matrix. Each column in the matrix corre -
+sponds to a specific criterion, while each row represents one of the 16 countries under consideration. The MEREC-OCRA 
+method, described in detail in the Methodology section, was then applied to evaluate the sustainability performance of the 
+countries. This was done by first constructing a decision matrix ( Table 3 ), followed by a normalization process ( Table 4 ) 
+using Equation (3) to convert all values into a common scale that accommodates both beneficial and non-beneficial criteria. 
+This transformation enabled a consistent and fair comparison of all countries across all selected dimensions.
+At this essential stage of the decision-making process, a comprehensive evaluation of the overall performance of all 
+available alternatives is considered imperative. This critical assessment is carried out through the implementation of Eq. 
+(4), which functions as the primary computational tool for quantifying the consolidated performance score of each alterna -
+tive. Through the application of this equation, a numerical representation of each alternative’s relative efficacy and suitabil -
+ity—ba
+
+--- MEREC Occurrence 29 ---
+ non-beneficial and beneficial evaluations are presented in Table 8 . A 
+synthesized visualization of these outcomes, highlighting the final evaluation score Pi of all alternatives according to Eq. 
+(12), is illustrated in Fig 5 . The final evaluation scores, as obtained from the application of the MEREC-OCRA method, 
+provide a comprehensive ranking of the sixteen countries assessed under the SREB framework. These scores reflect the 
+integrated sustainability performance of each country, incorporating both beneficial and non-beneficial criteria related to 
+Fig 4 . The obtained criteria weight.
+https://doi.org/10.1371/journal.pone.0324538.g004
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 14 / 20environmental, social, and economic dimensions. Among all participating countries, Israel achieved the highest overall 
+score (135.22), indicating its leading position in terms of sustainability performance. This result suggests a strong bal -
+ance between economic productivity, environmental responsibility, and social development. Close behind Israel are Sri 
+Lanka (132.18), Bahrain (131.86), and Nepal (132.09), all of which demonstrate commendable performance across the 
+assessed criteria. These high-ranking countries may be characterized by effective emission ma
+
+--- MEREC Occurrence 30 ---
+ance of United Arab Emirates (105.24), which, despite being 
+a high-income country, may face sustainability trade-offs related to its carbon-intensive economic structure and urban 
+growth patterns.
+Sensitivity analysis
+To evaluate the robustness and stability of the country rankings produced by the MEREC-OCRA method, a sensitivity 
+analysis was performed by applying the same objective MEREC-derived weights to two additional MCDM techniques: 
+TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution) and EDAS (Evaluation based on Distance from 
+Average Solution). These methods were selected for their compatibility with objective weighting and their ability to differ -
+entiate among alternatives using both beneficial and non-beneficial criteria.
+The comparison results of the country rankings derived from the three methods are presented visually depicted in 
+Fig 6 . The rankings demonstrate a high degree of consistency in identifying countries with the best and worst perfor -
+mance in terms of sustainability. Notably, Israel, Nepal, and Pakistan consistently appear among the top-performing 
+countries, while India, Saudi Arabia, and Iraq are ranked toward the bottom across all three methods. Minor discrepan -
+cies in middle-ranking countries—such as Lebanon, Sri Lanka
+
+--- MEREC Occurrence 31 ---
+face sustainability trade-offs related to its carbon-intensive economic structure and urban 
+growth patterns.
+Sensitivity analysis
+To evaluate the robustness and stability of the country rankings produced by the MEREC-OCRA method, a sensitivity 
+analysis was performed by applying the same objective MEREC-derived weights to two additional MCDM techniques: 
+TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution) and EDAS (Evaluation based on Distance from 
+Average Solution). These methods were selected for their compatibility with objective weighting and their ability to differ -
+entiate among alternatives using both beneficial and non-beneficial criteria.
+The comparison results of the country rankings derived from the three methods are presented visually depicted in 
+Fig 6 . The rankings demonstrate a high degree of consistency in identifying countries with the best and worst perfor -
+mance in terms of sustainability. Notably, Israel, Nepal, and Pakistan consistently appear among the top-performing 
+countries, while India, Saudi Arabia, and Iraq are ranked toward the bottom across all three methods. Minor discrepan -
+cies in middle-ranking countries—such as Lebanon, Sri Lanka, and Turkey—can be attributed to differences in how each 
+method handles normalization 
+
+--- MEREC Occurrence 32 ---
+ka, and Turkey—can be attributed to differences in how each 
+method handles normalization and distance computations. Fig 6  illustrates the comparative rankings across all meth -
+ods, highlighting both convergence and divergence. The overall similarity of the results supports the robustness of the 
+MEREC-OCRA model and its capacity to deliver stable, reproducible decisions even when cross-validated with alterna -
+tive MCDM approaches.
+Fig 6 . The sensitivity analysis results.
+https://doi.org/10.1371/journal.pone.0324538.g006
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 17 / 20Policy recommendations
+Based on the final evaluation results derived from the MEREC-OCRA method, a series of actionable recommendations 
+are proposed to support policymakers across South Asia, West Asia, and Africa in enhancing sustainability outcomes 
+within the SREB context. These recommendations are informed by the weighted criteria and observed performance dis -
+parities among the sixteen evaluated countries.
+First, it is recommended that countries exhibiting lower sustainability scores—such as India, Iraq, and Saudi Ara -
+bia—prioritize the development and enforcement of comprehensive climate and emissions policies. Particular attention 
+should be paid to reducing methane and n
+
+--- MEREC Occurrence 33 ---
+ross-validated with alterna -
+tive MCDM approaches.
+Fig 6 . The sensitivity analysis results.
+https://doi.org/10.1371/journal.pone.0324538.g006
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 17 / 20Policy recommendations
+Based on the final evaluation results derived from the MEREC-OCRA method, a series of actionable recommendations 
+are proposed to support policymakers across South Asia, West Asia, and Africa in enhancing sustainability outcomes 
+within the SREB context. These recommendations are informed by the weighted criteria and observed performance dis -
+parities among the sixteen evaluated countries.
+First, it is recommended that countries exhibiting lower sustainability scores—such as India, Iraq, and Saudi Ara -
+bia—prioritize the development and enforcement of comprehensive climate and emissions policies. Particular attention 
+should be paid to reducing methane and nitrous oxide emissions, which were identified as the most influential indica -
+tors in the assessment. Investments should be directed toward low-carbon technologies and infrastructure upgrades in 
+energy- intensive sectors. Additionally, the introduction of emissions trading systems, renewable energy incentives, and 
+stricter environmental compliance mechanisms would contribute to red
+
+--- MEREC Occurrence 34 ---
+sessments of the environmental and economic impacts of the SREB, thereby 
+providing an evidence-based foundation to inform and guide future policy and development strategies.
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 18 / 20A novel methodological framework, known as the MEREC-OCRA method, was introduced and employed in this study. 
+This approach integrates the objective weighting capabilities of the MEREC method—which assesses the impact of 
+criteria removal on overall alternative performance—with the operational competitiveness evaluation offered by the OCRA 
+technique. By applying this hybrid multi-criteria decision-making framework, an objective and reproducible ranking of 
+sixteen countries involved in the SREB was achieved. The methodological innovation was designed to address both bene -
+ficial and non-beneficial sustainability indicators, thereby providing a comprehensive and balanced assessment of each 
+country’s performance.
+The application of the MEREC-OCRA methodology yielded a spectrum of sustainability performance scores, which 
+revealed significant disparities among the countries examined. Some nations were identified as leaders in sustain -
+able development, while others were found to lag considerably behind. The results provided insigh
+
+--- MEREC Occurrence 35 ---
+ future policy and development strategies.
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 18 / 20A novel methodological framework, known as the MEREC-OCRA method, was introduced and employed in this study. 
+This approach integrates the objective weighting capabilities of the MEREC method—which assesses the impact of 
+criteria removal on overall alternative performance—with the operational competitiveness evaluation offered by the OCRA 
+technique. By applying this hybrid multi-criteria decision-making framework, an objective and reproducible ranking of 
+sixteen countries involved in the SREB was achieved. The methodological innovation was designed to address both bene -
+ficial and non-beneficial sustainability indicators, thereby providing a comprehensive and balanced assessment of each 
+country’s performance.
+The application of the MEREC-OCRA methodology yielded a spectrum of sustainability performance scores, which 
+revealed significant disparities among the countries examined. Some nations were identified as leaders in sustain -
+able development, while others were found to lag considerably behind. The results provided insightful benchmarks that 
+illustrated the varying effectiveness of sustainable practices and policies across the evaluated regions. Thro
+
+--- MEREC Occurrence 36 ---
+le ranking of 
+sixteen countries involved in the SREB was achieved. The methodological innovation was designed to address both bene -
+ficial and non-beneficial sustainability indicators, thereby providing a comprehensive and balanced assessment of each 
+country’s performance.
+The application of the MEREC-OCRA methodology yielded a spectrum of sustainability performance scores, which 
+revealed significant disparities among the countries examined. Some nations were identified as leaders in sustain -
+able development, while others were found to lag considerably behind. The results provided insightful benchmarks that 
+illustrated the varying effectiveness of sustainable practices and policies across the evaluated regions. Through these 
+findings, a foundational understanding was established regarding the relative progress of each country and the overall 
+challenges they face in navigating their sustainable development trajectories.
+While the study yielded groundbreaking insights, it was recognized that inherent limitations exist, particularly due to the 
+reliance on decision-makers’ judgments that may introduce subjective biases. As a consequence, it is proposed that future 
+research should apply the MEREC-OCRA method to a broader range of multi-criteria decision-making problems acro
+
+--- MEREC Occurrence 37 ---
+development trajectories.
+While the study yielded groundbreaking insights, it was recognized that inherent limitations exist, particularly due to the 
+reliance on decision-makers’ judgments that may introduce subjective biases. As a consequence, it is proposed that future 
+research should apply the MEREC-OCRA method to a broader range of multi-criteria decision-making problems across 
+different geographical and situational contexts. Such expansion could involve diverse comparative analyses employing 
+various sets of criteria and alternatives, thereby enhancing the robustness and generalizability of the findings. Further 
+research is also recommended to validate the current results against empirical case studies and establish sustainability 
+benchmarks, such as those defined by the United Nations Sustainable Development Goals, in order to further enrich the 
+discourse on sustainable development evaluation.
+Supporting information
+S1 File.  The decision making data and computation results. 
+(DOCX)
+Author contributions
+Conceptualization:  Chia-Nan Wang, Hoang-Kha Nguyen, Nhat-Luong Nhieu.
+Data curation:  Hoang-Kha Nguyen, Nhat-Luong Nhieu.
+Funding acquisition:  Hoang-Kha Nguyen, Nhat-Luong Nhieu.
+Investigation:  Hoang-Kha Nguyen, Nhat-Luong Nhieu.
+Methodology:  Nhat-Luong Nhieu.
+Proj
+
+--- MEREC Occurrence 38 ---
+ively weighting decision-making 
+approach. Renewable Energy. 2024;230:120881. https://doi.org/10.1016/j.renene.2024.120881
+ 19. Keshavarz-Ghorabaee M, Amiri M, Zavadskas EK, Turskis Z, Antucheviciene J. Determination of objective weights using a new method based on 
+the removal effects of criteria (MEREC). Symmetry. 2021;13(4):525. https://doi.org/10.3390/sym13040525
+ 20. Chakraborty S, Chatterjee P, Das P. Operational competitiveness rating analysis (ocra) method. Multi-criteria decision-making methods in manufac -
+turing environments. Apple Academic Press; 2024. p. 165–70.
+ 21. Nasrollahi S, Kazemi A, Jahangir M-H, Aryaee S. Selecting suitable wave energy technology for sustainable development, an MCDM approach. 
+Renew Energy. 2023;202:756–72. https://doi.org/10.1016/j.renene.2022.11.005
+ 22. Vaziri Rad MA, Forootan Fard H, Khazanedari K, Toopshekan A, Ourang S, Khanali M, et al. A global framework for maximizing sustainable devel -
+opment indexes in agri-photovoltaic-based renewable systems: Integrating DEMATEL, ANP, and MCDM methods. Appl Energy. 2024;360:122715. 
+https://doi.org/10.1016/j.apenergy.2024.122715
+ 23. Alkan N. Evaluation of sustainable development and utilization-oriented renewable energy systems based on CRITIC-SWARA-CODAS method 
+using interval valued picture 
+
+--- MEREC Occurrence 39 ---
+rwane VS, Yadav VS, Raut RD, Narkhede BE, Gardas BB. Sustainable development challenges of the biofuel industry in India based on inte -
+grated MCDM approach. Renew Ener. 2021;164:298–309. https://doi.org/10.1016/j.renene.2020.09.077
+ 26. Kara K, Yalçın GC, Acar AZ, Simic V, Konya S, Pamucar D. The MEREC-AROMAN method for determining sustainable competitiveness levels: a 
+case study for Turkey. Socio-Economic Planning Sci. 2024;91:101762. https://doi.org/10.1016/j.seps.2023.101762
+
+PLOS One | https://doi.org/10.1371/journal.pone.0324538  May 20, 2025 20 / 20 27. Bera K, Satapathy S. Challenges of sustainable urban planning in Odisha (India): using the OCRA method. In: Conference of innovative product 
+design and intelligent manufacturing system. Springer; 2023.
+ 28. Wang C-N, Dang T-T, Nguyen N-A-T, Chou C-C, Hsu H-P, Dang L-T-H. Evaluating global container shipping companies: a novel approach to inves -
+tigating both qualitative and quantitative criteria for sustainable development. Axioms. 2022;11(11):610. https://doi.org/10.3390/axioms11110610
+ 29. Łuczak A, Just M. Sustainable development of territorial units: MCDM approach with optimal tail selection. Ecological Modelling. 2021;457:109674. 
+https://doi.org/10.1016/j.ecolmodel.2021.109674
+ 30. Li T, Li A, Guo X. The sustainab
