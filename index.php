@@ -486,8 +486,8 @@ function callInitialAIConsultant($jsonData, $apiKey) {
                         statsMax: "Maximum Weight",
                         statsSd: "Standard Deviation (SD)",
                         statsEntropy: "Weight Entropy",
-                        spearmanHeader: "Uji Konsistensi: Spearman Correlation Matrix",
-                        spearmanDesc: "Consistency check of ranking methods using Spearman Rank Correlation matrix.",
+                        spearmanHeader: "Criteria Correlation: Spearman Matrix",
+                        spearmanDesc: "Spearman Rank Correlation matrix between active criteria values across alternatives.",
                         stabilityHeader: "Uji Stabilitas: Exclude-Alternative Stability Index",
                         stabilityDesc: "Stability testing methodology: Done by eliminating one alternative at a time (from 16 countries), then recalculating weights and rankings. The stability score is the average Spearman correlation coefficient between original and perturbed rankings.",
                         stabilityColMethod: "Method Combination",
@@ -540,8 +540,8 @@ function callInitialAIConsultant($jsonData, $apiKey) {
                         statsMax: "Bobot Maksimum",
                         statsSd: "Standar Deviasi (SD)",
                         statsEntropy: "Entropi Bobot",
-                        spearmanHeader: "Uji Konsistensi: Spearman Correlation Matrix",
-                        spearmanDesc: "Pemeriksaan konsistensi metode peringkat menggunakan matriks Korelasi Peringkat Spearman.",
+                        spearmanHeader: "Korelasi Kriteria: Matriks Spearman",
+                        spearmanDesc: "Matriks Korelasi Peringkat Spearman antar nilai kriteria aktif di seluruh alternatif.",
                         stabilityHeader: "Uji Stabilitas: Exclude-Alternative Stability Index",
                         stabilityDesc: "Metodologi Uji Stabilitas: Dilakukan dengan mengeliminasi satu-persatu alternatif (dari 16 negara), lalu menghitung ulang bobot dan peringkat. Nilai stabilitas adalah rata-rata koefisien korelasi Spearman antara peringkat asli dan peringkat setelah satu negara dihilangkan.",
                         stabilityColMethod: "Kombinasi Metode",
@@ -876,19 +876,24 @@ function callInitialAIConsultant($jsonData, $apiKey) {
                     spearmanHeader.innerHTML = '';
                     spearmanBody.innerHTML = '';
                     
-                    const methods = Object.keys(data.spearman_correlation);
+                    const cNames = Object.keys(data.spearman_correlation);
+                    const rawNames = data.all_criteria_names_raw || data.criteria_names;
+                    const getCritCode = (name) => {
+                        const globalIdx = rawNames.indexOf(name);
+                        return globalIdx !== -1 ? `A${globalIdx + 1}` : name;
+                    };
                     
                     // Header row
                     const trh = document.createElement('tr');
-                    trh.innerHTML = `<th class="text-start">${currentLang === 'id' ? 'Metode' : 'Method'}</th>` + methods.map(m => `<th>${m}</th>`).join('');
+                    trh.innerHTML = `<th class="text-start">${currentLang === 'id' ? 'Kriteria' : 'Criteria'}</th>` + cNames.map(name => `<th title="${name}" style="cursor: help;">${getCritCode(name)}</th>`).join('');
                     spearmanHeader.appendChild(trh);
                     
                     // Body rows
-                    methods.forEach(m1 => {
+                    cNames.forEach(m1 => {
                         const tr = document.createElement('tr');
-                        let cellsHtml = `<td class="text-start fw-bold">${m1}</td>`;
+                        let cellsHtml = `<td class="text-start fw-bold" title="${m1}" style="cursor: help;">${getCritCode(m1)}</td>`;
                         
-                        methods.forEach(m2 => {
+                        cNames.forEach(m2 => {
                             const coef = data.spearman_correlation[m1][m2].coefficient;
                             const p = data.spearman_correlation[m1][m2].p_value;
                             
@@ -984,13 +989,20 @@ function callInitialAIConsultant($jsonData, $apiKey) {
                         const vals = Object.values(data.spearman_correlation[k1]).map(v => v.coefficient);
                         return vals.reduce((a, b) => a + b, 0) / vals.length;
                     });
+                    
+                    const rawNames = data.all_criteria_names_raw || data.criteria_names;
+                    const getCritCode = (name) => {
+                        const globalIdx = rawNames.indexOf(name);
+                        return globalIdx !== -1 ? `A${globalIdx + 1}` : name;
+                    };
+                    const chartLabels = labels.map(getCritCode);
 
                     if (spearmanChartInstance) spearmanChartInstance.destroy();
                     const ctx = document.getElementById('spearmanChart').getContext('2d');
                     spearmanChartInstance = new Chart(ctx, {
                         type: 'bar',
                         data: {
-                            labels: labels,
+                            labels: chartLabels,
                             datasets: [{
                                 label: currentLang === 'id' ? 'Rata-rata Korelasi Spearman' : 'Avg Spearman Correlation',
                                 data: avgCorrs,
@@ -1016,7 +1028,15 @@ function callInitialAIConsultant($jsonData, $apiKey) {
                                 }
                             },
                             plugins: {
-                                legend: { labels: { color: getTickColor() } }
+                                legend: { labels: { color: getTickColor() } },
+                                tooltip: {
+                                    callbacks: {
+                                        title: function(context) {
+                                            const idx = context[0].dataIndex;
+                                            return labels[idx];
+                                        }
+                                    }
+                                }
                             }
                         }
                     });

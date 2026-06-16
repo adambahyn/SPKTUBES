@@ -121,16 +121,30 @@ def main():
             "LOPCOW-OCRA": ocra_lopcow_ranks
         }
         
+        # Criteria Names
+        n_crit = len(matrix[0])
+        criteria_names = input_data.get('criteria_names', [f"C{i+1}" for i in range(n_crit)])
+
+        # Spearman correlation table for criteria
         spearman_matrix = {}
+        X = np.array(matrix, dtype=float)
+        for idx1, c1 in enumerate(criteria_names):
+            spearman_matrix[c1] = {}
+            for idx2, c2 in enumerate(criteria_names):
+                corr, _ = spearmanr(X[:, idx1], X[:, idx2])
+                spearman_matrix[c1][c2] = float(corr) if not np.isnan(corr) else 0.0
+                
+        # Separate Spearman correlation for rankings (needed for best combo)
+        ranking_spearman = {}
         keys = list(combos.keys())
         for k1 in keys:
-            spearman_matrix[k1] = {}
+            ranking_spearman[k1] = {}
             for k2 in keys:
                 corr, _ = spearmanr(combos[k1], combos[k2])
-                spearman_matrix[k1][k2] = float(corr) if not np.isnan(corr) else 0.0
-                
+                ranking_spearman[k1][k2] = float(corr) if not np.isnan(corr) else 0.0
+        
         # Best Combination Selection
-        avg_corrs = {k: np.mean(list(v.values())) for k, v in spearman_matrix.items()}
+        avg_corrs = {k: np.mean(list(v.values())) for k, v in ranking_spearman.items()}
         best_combo = max(avg_corrs, key=avg_corrs.get)
         
         # Stability Test: Remove first alternative, recalculate ranks

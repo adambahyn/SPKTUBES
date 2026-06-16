@@ -285,13 +285,24 @@ def main():
                 "BORDA": borda_ranks.tolist(),
             }
             
-        # Spearman correlation table
+        # Spearman correlation table for criteria
         spearman_results = {}
+        for idx1, c1 in enumerate(criteria_names):
+            spearman_results[c1] = {}
+            for idx2, c2 in enumerate(criteria_names):
+                corr, p_val = spearmanr(X[:, idx1], X[:, idx2])
+                spearman_results[c1][c2] = {
+                    "coefficient": float(corr) if not np.isnan(corr) else 0.0,
+                    "p_value": float(p_val) if not np.isnan(p_val) else 0.0
+                }
+                
+        # Separate Spearman correlation for rankings (needed for best combination evaluation)
+        ranking_spearman = {}
         for k1, v1 in ranks_dict.items():
-            spearman_results[k1] = {}
+            ranking_spearman[k1] = {}
             for k2, v2 in ranks_dict.items():
                 corr, p_val = spearmanr(v1, v2)
-                spearman_results[k1][k2] = {
+                ranking_spearman[k1][k2] = {
                     "coefficient": float(corr) if not np.isnan(corr) else 0.0,
                     "p_value": float(p_val) if not np.isnan(p_val) else 0.0
                 }
@@ -394,7 +405,7 @@ def main():
         # Best combination evaluation
         score_eval = {}
         for combo in ["MEREC-MABAC", "MEREC-OCRA", "LOPCOW-MABAC", "LOPCOW-OCRA"]:
-            avg_corr_with_jurnal = spearman_results[combo]["Rank Jurnal"]["coefficient"]
+            avg_corr_with_jurnal = ranking_spearman[combo]["Rank Jurnal"]["coefficient"]
             stab = stability_summary[combo]
             score_eval[combo] = 0.5 * avg_corr_with_jurnal + 0.5 * stab
         best_combo = max(score_eval, key=score_eval.get)

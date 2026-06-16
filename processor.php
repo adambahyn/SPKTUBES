@@ -73,7 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $inputData = [
             "criteria_types" => $criteriaTypes,
             "alternatives" => $alternatives,
-            "matrix" => $matrix
+            "matrix" => $matrix,
+            "criteria_names" => $criteriaNames
         ];
         
         $jsonInput = json_encode($inputData);
@@ -229,6 +230,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Prepare Data for Chart.js
             const spearmanData = <?php echo json_encode($results['spearman_correlation']); ?>;
             const labels = Object.keys(spearmanData);
+            const chartLabels = labels.map((name, idx) => `C${idx + 1}`);
             
             // Bar chart showing average correlation per combination
             const avgCorrs = labels.map(k1 => {
@@ -240,7 +242,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: labels,
+                    labels: chartLabels,
                     datasets: [{
                         label: 'Avg Spearman Correlation',
                         data: avgCorrs,
@@ -265,7 +267,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         }
                     },
                     plugins: {
-                        legend: { labels: { color: '#f8fafc' } }
+                        legend: { labels: { color: '#f8fafc' } },
+                        tooltip: {
+                            callbacks: {
+                                title: function(context) {
+                                    const idx = context[0].dataIndex;
+                                    return labels[idx];
+                                }
+                            }
+                        }
                     }
                 }
             });
